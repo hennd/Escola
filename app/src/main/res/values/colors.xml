@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#444878</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="appAzulClaro">#AAC2D2</color>
+    <color name="appAzulForte">#444878</color>
+    <color name="appRosa">#FAACD0</color>
+    <color name="appBranco">#FBFFF8</color>
+    <color name="appRoxo">#BF5CA0</color>
+    <color name="fundocinza">#e6e6e6</color>
+    #e6f2ff
+</resources>

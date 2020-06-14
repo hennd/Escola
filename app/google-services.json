@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "278279481298",
+    "firebase_url": "https://dadospedacinho-a263d.firebaseio.com",
+    "project_id": "dadospedacinho-a263d",
+    "storage_bucket": "dadospedacinho-a263d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278279481298:android:9f18ce666079fe0712ca0b",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278279481298-vbsau086mkbbnbtg9ibg73jp4oh8hlvn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "2b5abffb6915e42a33557bd0b2644fea2a076e1f"
+          }
+        },
+        {
+          "client_id": "278279481298-7qh0v3nsd5k4n4mk90qcsvvj7q3rj1f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKaOqd5Bf3EJBClXxsvvlPgACcgUqWgyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278279481298-7qh0v3nsd5k4n4mk90qcsvvj7q3rj1f5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

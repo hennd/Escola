@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Agenda">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fundocinza"
+        android:orientation="horizontal"
+        tools:context=".Agenda">
+
+        <TextView
+            android:id="@+id/txtRefeicoes"
+            android:layout_width="196dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Refeições"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:id="@+id/txtAtividadeDoDia"
+            android:layout_width="245dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Atividade do dia"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtMedicacao" />
+
+        <TextView
+            android:id="@+id/txtAtividadeEspecializada"
+
+            android:layout_width="299dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Atividade Especializada"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtAtividadedoDiaTarde" />
+
+        <TextView
+            android:id="@+id/txtObservacoes"
+            android:layout_width="299dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Observações"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtAtividadeEspecializada" />
+
+        <TextView
+            android:id="@+id/txtSono"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Sono"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLegenda" />
+
+        <TextView
+            android:id="@+id/txtFebre"
+            android:layout_width="115dp"
+            android:layout_height="138dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:gravity="center"
+            android:text="Febre"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEvacuacao" />
+
+        <TextView
+            android:id="@+id/txtEvacuacao"
+            android:layout_width="159dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Evacuação"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSono" />
+
+        <TextView
+            android:id="@+id/txtLanche1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Lanche"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRefeicoes" />
+
+        <TextView
+            android:id="@+id/txtAlmoco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Almoço"
+            app:layout_constraintEnd_toEndOf="@+id/txtLanche1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtLanche1"
+            app:layout_constraintTop_toBottomOf="@+id/txtLanche1" />
+
+        <TextView
+            android:id="@+id/txtLanche2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Lanche"
+            app:layout_constraintEnd_toEndOf="@+id/txtAlmoco"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/txtAlmoco"
+            app:layout_constraintTop_toBottomOf="@+id/txtAlmoco" />
+
+        <TextView
+            android:id="@+id/txtJantar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Jantar"
+            app:layout_constraintEnd_toEndOf="@+id/txtLanche2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/txtLanche2"
+            app:layout_constraintTop_toBottomOf="@+id/txtLanche2" />
+
+        <EditText
+            android:id="@+id/edtLanche1"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLanche1"
+            app:layout_constraintStart_toEndOf="@+id/txtLanche1"
+            app:layout_constraintTop_toTopOf="@+id/txtLanche1" />
+
+        <EditText
+            android:id="@+id/edtAlmoco"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAlmoco"
+            app:layout_constraintEnd_toEndOf="@+id/edtLanche1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edtLanche1"
+            app:layout_constraintTop_toTopOf="@+id/txtAlmoco"
+            app:layout_constraintVertical_bias="0.545" />
+
+        <EditText
+            android:id="@+id/edtLanche2"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLanche2"
+            app:layout_constraintStart_toStartOf="@+id/edtAlmoco"
+            app:layout_constraintTop_toTopOf="@+id/txtLanche2" />
+
+        <EditText
+            android:id="@+id/edtJantar"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtJantar"
+            app:layout_constraintEnd_toEndOf="@+id/edtLanche2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/edtLanche2"
+            app:layout_constraintTop_toTopOf="@+id/txtJantar" />
+
+        <EditText
+            android:id="@+id/edtMedicacao"
+            android:layout_width="195dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:hint="Medicação"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFebre"
+            app:layout_constraintStart_toStartOf="@+id/spinner_febre_temp" />
+
+        <EditText
+            android:id="@+id/edtAtividadedoDiaManha"
+            android:layout_width="262dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAtividadedoDiaManha"
+            app:layout_constraintStart_toEndOf="@+id/txtAtividadedoDiaManha"
+            app:layout_constraintTop_toTopOf="@+id/txtAtividadedoDiaManha" />
+
+        <EditText
+            android:id="@+id/edtAtividadedoDiaTarde"
+            android:layout_width="262dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAtividadedoDiaTarde"
+            app:layout_constraintEnd_toEndOf="@+id/edtAtividadedoDiaManha"
+            app:layout_constraintStart_toStartOf="@+id/edtAtividadedoDiaManha"
+            app:layout_constraintTop_toTopOf="@+id/txtAtividadedoDiaTarde" />
+
+        <EditText
+
+            android:id="@+id/edtAtividadeEspecializada"
+            android:layout_width="286dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadeEspecializada" />
+
+        <EditText
+            android:id="@+id/edtObservacoes"
+
+            android:layout_width="271dp"
+            android:layout_height="205dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:gravity="left"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtObservacoes" />
+
+        <Spinner
+
+            android:id="@+id/spinner_lanche1"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtLanche1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintStart_toEndOf="@+id/edtLanche1"
+            app:layout_constraintTop_toTopOf="@+id/edtLanche1" />
+
+        <Spinner
+
+            android:id="@+id/spinner_almoco"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtAlmoco"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1"
+            app:layout_constraintStart_toEndOf="@+id/edtLanche1"
+            app:layout_constraintTop_toTopOf="@+id/edtAlmoco" />
+
+        <Spinner
+
+            android:id="@+id/spinner_lanche2"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtLanche2"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1"
+            app:layout_constraintStart_toEndOf="@+id/edtLanche1"
+            app:layout_constraintTop_toTopOf="@+id/edtLanche2" />
+
+        <Spinner
+
+            android:id="@+id/spinner_jantar"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtJantar"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1"
+            app:layout_constraintStart_toEndOf="@+id/edtLanche1"
+            app:layout_constraintTop_toTopOf="@+id/edtJantar" />
+
+        <Spinner
+
+            android:id="@+id/spinner_sono_turnos"
+            android:layout_width="178dp"
+            android:layout_height="40dp"
+
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtSono"
+            app:layout_constraintStart_toEndOf="@+id/txtSono"
+            app:layout_constraintTop_toTopOf="@+id/txtSono" />
+
+        <Spinner
+            android:id="@+id/spinner_evacuacao"
+            android:layout_width="196dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEvacuacao"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_tempo_sono"
+            app:layout_constraintTop_toTopOf="@+id/txtEvacuacao" />
+
+        <Spinner
+
+            android:id="@+id/spinner_tempo_sono"
+            android:layout_width="105dp"
+            android:layout_height="40dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_sono_turnos"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_jantar" />
+
+        <Spinner
+
+            android:id="@+id/spinner_febre_temp"
+            android:layout_width="107dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="22dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFebre"
+            app:layout_constraintStart_toEndOf="@+id/txtFebre"
+            app:layout_constraintTop_toTopOf="@+id/txtFebre"
+            app:layout_constraintVertical_bias="0.479" />
+
+        <EditText
+            android:id="@+id/edtHoraFebre"
+            android:layout_width="61dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/redondo"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_febre_temp"
+            app:layout_constraintStart_toEndOf="@+id/spinner_febre_temp"
+            app:layout_constraintTop_toTopOf="@+id/spinner_febre_temp"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/txtLegenda"
+            android:layout_width="339dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="24dp"
+            android:text="Legenda:       B = BEM      MM = MENOS DA METADE      M = METADE      NA= NAO ACEITOU"
+            android:textSize="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtJantar" />
+
+        <TextView
+            android:id="@+id/txtAtividadedoDiaManha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Manhã"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadeDoDia" />
+
+        <TextView
+            android:id="@+id/txtAtividadedoDiaTarde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Tarde"
+            app:layout_constraintEnd_toEndOf="@+id/txtAtividadedoDiaManha"
+            app:layout_constraintStart_toStartOf="@+id/txtAtividadedoDiaManha"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadedoDiaManha" />
+
+        <Button
+            android:id="@+id/btnHoraFebre"
+            android:layout_width="25dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/ic_iconfinder_access_time_326483"
+            android:onClick="showTimePickerDialog"
+            app:layout_constraintBottom_toBottomOf="@+id/edtHoraFebre"
+            app:layout_constraintStart_toEndOf="@+id/edtHoraFebre"
+            app:layout_constraintTop_toTopOf="@+id/edtHoraFebre" />
+
+        <RadioGroup
+            android:layout_width="195dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/edtMedicacao"
+            app:layout_constraintStart_toStartOf="@+id/edtMedicacao"
+            app:layout_constraintTop_toTopOf="@+id/txtFebre">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sim" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Não" />
+        </RadioGroup>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

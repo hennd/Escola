@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Escola Infantil</string>
+    <string-array name="comeu">
+        <item>B</item>
+        <item>M</item>
+        <item>MM</item>
+        <item>NA</item>
+    </string-array>
+    <string-array name="turnos_sono">
+        <item>Não dormiu</item>
+        <item>Manhã</item>
+        <item>Tarde</item>
+        <item>Manhã/Tarde</item>
+
+    </string-array>
+    <string-array name="tempo_sono">
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>105</item>
+        <item>110</item>
+        <item>115</item>
+        <item>120</item>
+    </string-array>
+    <string-array name="evacuacao">
+        <item>Não Evacuou</item>
+        <item>Normal</item>
+        <item>Pastosa</item>
+        <item>Diarreia</item>
+
+    </string-array>
+    <string-array name="febre_sim_nao">
+        <item>Sim</item>
+        <item>Não</item>
+    </string-array>
+    <string-array name="febre_temp">
+        <item>0</item>
+        <item>37.8</item>
+        <item>37.9</item>
+        <item>38.0</item>
+        <item>38.1</item>
+        <item>38.2</item>
+        <item>38.3</item>
+        <item>38.4</item>
+        <item>38.5</item>
+        <item>38.6</item>
+        <item>38.7</item>
+        <item>38.8</item>
+        <item>38.9</item>
+        <item>39.0</item>
+        <item>39.1</item>
+        <item>39.2</item>
+        <item>39.3</item>
+        <item>39.4</item>
+        <item>39.5</item>
+        <item>39.6</item>
+        <item>39.7</item>
+        <item>39.8</item>
+        <item>39.9</item>
+        <item>40.0</item>
+        <item>40.1</item>
+        <item>40.2</item>
+        <item>40.3</item>
+        <item>40.4</item>
+        <item>40.5</item>
+        <item>40.6</item>
+        <item>40.7</item>
+        <item>40.8</item>
+        <item>40.9</item>
+        <item>41.0</item>
+    </string-array>
+
+</resources>

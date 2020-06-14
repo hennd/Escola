@@ -50,7 +50,7 @@ public class Dash extends AppCompatActivity {
     public void deslogar(View view){
 
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(Dash.this, TelaInicial.class);
+        Intent intent = new Intent(Dash.this, Login.class);
         startActivity(intent);
         finish();
 

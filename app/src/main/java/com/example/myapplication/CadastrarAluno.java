@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Registrar extends AppCompatActivity {
+public class CadastrarAluno extends AppCompatActivity {
 
     private EditText nomeAluno, nomeMaeAluno, nomePaiAluno, telefoneAluno, emailTV, passwordTV;
     private Button regBtn;
@@ -31,7 +31,7 @@ public class Registrar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrar);
+        setContentView(R.layout.activity_cadastrar_aluno);
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -132,7 +132,7 @@ public class Registrar extends AppCompatActivity {
 
                             CadastrarAlunoDatabase(aluno);
 
-                            Intent intent = new Intent(Registrar.this, Dash.class);
+                            Intent intent = new Intent(CadastrarAluno.this, Dash.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_LONG).show();

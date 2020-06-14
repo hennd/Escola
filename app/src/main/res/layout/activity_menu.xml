@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Menu">
+
+    <Button
+        android:id="@+id/btnCadastrarAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Aluno"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="370dp" />
+    <Button
+        android:id="@+id/btnCadastrarProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Professor"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="370dp" />
+    <Button
+        android:id="@+id/btnCadastrarTurma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Turma"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="370dp" />
+    <Button
+        android:id="@+id/btnDeslogar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deslogar"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+</LinearLayout>

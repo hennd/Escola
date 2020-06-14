@@ -50,11 +50,11 @@ public class Dash extends AppCompatActivity {
     public void deslogar(View view){
 
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(Dash.this, TelaInicial.class);
         startActivity(intent);
         finish();
 
-        Toast.makeText(Dash.this, "", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "", Toast.LENGTH_LONG).show();
     }
     public void retrieveData(){
                    listener = databaseReference.addValueEventListener(new ValueEventListener() {

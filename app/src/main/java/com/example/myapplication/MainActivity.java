@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public void login(View view){
 
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(this, TelaInicial.class);
         startActivity(intent);
         finish();
     }
     public void registrar(View view){
 
-        Intent intent = new Intent(this, Registrar.class);
+        Intent intent = new Intent(this, CadastrarAluno.class);
         startActivity(intent);
         finish();
     }

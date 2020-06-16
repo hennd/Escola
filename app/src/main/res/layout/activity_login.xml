@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="16dp"
     tools:context=".Login">
+
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Account login"/>
+        android:text="Login"/>
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"

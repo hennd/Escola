@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".UpdateAluno"></activity>
+        <activity android:name=".CadastrarProfessor" />
+        <activity android:name=".TelaAlunoDiretoria" />
         <activity android:name=".MenuDiretoria" />
         <activity android:name=".Login">
             <intent-filter>
@@ -20,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Editar" />
+
+
+        <activity android:name=".CadastrarAluno" />
         <activity android:name=".Agenda" />
         <activity android:name=".Dash" />
         <activity android:name=".MainActivity" />

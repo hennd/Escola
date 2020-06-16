@@ -140,5 +140,10 @@ public class CadastrarAluno extends AppCompatActivity {
                     }
                 });
     }
+    public void voltarTelaAlunos(View view) {
+        Intent intent = new Intent(CadastrarAluno.this, TelaAlunoDiretoria.class);
+        startActivity(intent);
+        finish();
+    }
 
 }

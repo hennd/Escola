@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".UpdateAluno">
+
+
+
+    <TextView
+        android:id="@+id/txtDadosAtualizaAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dados do Aluno" />
+
+    <EditText
+        android:id="@+id/edtNomeAlunoAtualiza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/edtNomeMaeAlunoAtualiza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+    <EditText
+        android:id="@+id/edtNomePaiAlunoAtualiza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+    <EditText
+        android:id="@+id/edtTelefoneContatoAlunoAtualiza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+    <Button
+        android:id="@+id/btnAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atualizar" />
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar" />
+
+</LinearLayout>

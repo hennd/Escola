@@ -8,32 +8,51 @@
     android:gravity="center"
     tools:context=".MenuDiretoria">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Abriu"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="179dp"
-        tools:layout_editor_absoluteY="241dp" />
 
     <Button
-        android:id="@+id/deslogar"
+        android:id="@+id/btnTelaAlunos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fazer Log Off"
+        android:text="Alunos"
+        android:textAlignment="center"
+        android:onClick="abrirTelaAlunos"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="267dp" />
+    <Button
+        android:id="@+id/btnTelaProfessores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Professores"
+        android:textAlignment="center"
+        android:onClick="sair"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="267dp" />
+    <Button
+        android:id="@+id/btnTelaTurmas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turmas"
+        android:textAlignment="center"
+        android:onClick="sair"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="267dp" />
+    <Button
+        android:id="@+id/btnTelaCardapio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cardapio"
+        android:textAlignment="center"
+        android:onClick="sair"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="267dp" />
+    <Button
+        android:id="@+id/btnSair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sair"
         android:textAlignment="center"
         android:onClick="sair"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="267dp" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:textAlignment="center"
-        android:onClick="sair"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="267dp" />
 </LinearLayout>

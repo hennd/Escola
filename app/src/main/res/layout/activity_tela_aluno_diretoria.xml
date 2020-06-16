@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".TelaAlunoDiretoria">
+
+
+    <Spinner
+        android:id="@+id/spinnerAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlunos"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btnEditarAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Editar Aluno Selecionado"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerAlunos"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerAlunos"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAlunos" />
+
+    <Button
+        android:id="@+id/btnExcluirAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Excluir Aluno Selecionado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnEditarAluno"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditarAluno" />
+
+    <Button
+        android:id="@+id/btnAdicionarAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="abrirTelaAlunos"
+        android:text="Cadastrar Novo Aluno"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnExcluirAluno"
+        app:layout_constraintStart_toStartOf="@+id/btnExcluirAluno"
+        app:layout_constraintTop_toBottomOf="@+id/btnExcluirAluno" />
+
+    <Button
+        android:id="@+id/btnSairTelaAlunoDiretoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:onClick="voltarTelaDiretoria"
+        android:text="Voltar"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnAdicionarAluno"
+        app:layout_constraintStart_toStartOf="@+id/btnAdicionarAluno"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdicionarAluno" />
+
+    <TextView
+        android:id="@+id/txtAlunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="ALUNOS"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

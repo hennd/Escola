@@ -18,7 +18,11 @@ public class MenuDiretoria extends AppCompatActivity {
 
     }
 
-
+    public void abrirTelaAlunos(View view) {
+        Intent intent = new Intent(MenuDiretoria.this, TelaAlunoDiretoria.class);
+        startActivity(intent);
+        finish();
+    }
 
     public void sair(View view){
 

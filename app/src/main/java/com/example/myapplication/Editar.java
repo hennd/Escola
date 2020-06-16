@@ -39,7 +39,7 @@ public class Editar extends AppCompatActivity {
         editTeste = (EditText) findViewById(R.id.edtTeste);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("alunos");
-        String usuario;
+
 
 
         retrieveData();
@@ -84,22 +84,19 @@ public class Editar extends AppCompatActivity {
         final String nome=spinnerEditar.getSelectedItem().toString();
         reference = FirebaseDatabase.getInstance().getReference();
         reference.child("alunos").orderByChild("nomeAluno").equalTo(nome).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
                 Aluno aluno = alunosSnapShot.getValue(Aluno.class);
-
-                DatabaseReference agoravai = reference.child("alunos").child(aluno.getKeyUser()).child(aluno.getNomeAluno()).child("Agenda").push();
-                agoravai.setValue("aqui");
-                editTeste.setText(aluno.getNomeMaeAluno());
-                }
+                alunosSnapShot.getRef().child("nomeAluno").setValue("Rafael");
             }
+        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                editTeste.setText("falhou");
-            }
-        });
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+            editTeste.setText("falhou");
+        }
+    });
 
     }
 }

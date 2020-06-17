@@ -17,9 +17,8 @@
     <EditText
         android:id="@+id/nomeAluno"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nome Aluno"
-         />
+        android:layout_height="45dp"
+        android:hint="Nome Aluno" />
     <EditText
         android:id="@+id/nomeMaeAluno"
         android:layout_width="match_parent"

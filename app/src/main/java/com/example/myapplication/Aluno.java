@@ -10,6 +10,7 @@ public class Aluno {
     private String telefoneAluno;
     private String emailAluno;
     private String password;
+    private String keyUser;
 
     @Exclude
     public String getPassword() {
@@ -28,7 +29,7 @@ public class Aluno {
         this.emailAluno = emailAluno;
     }
 
-    private String keyUser;
+
 
     public String getNomeAluno() {
         return nomeAluno;

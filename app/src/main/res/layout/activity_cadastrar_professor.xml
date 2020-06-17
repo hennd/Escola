@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
     tools:context=".CadastrarProfessor">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtDadosProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dados do Professor" />
+
+    <EditText
+        android:id="@+id/edtNomeProfessora"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Nome Professor"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtTelefoneProfessora"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Telefone Professor"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinner_cargo_professora"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+
+    <EditText
+        android:id="@+id/edtEmailProfessora"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Email Professor"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtSenhaProfessora"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Senha Professor"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnCadastrarProfessora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+</LinearLayout>

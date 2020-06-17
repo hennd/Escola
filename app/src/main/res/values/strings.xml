@@ -87,5 +87,9 @@
         <item>40.9</item>
         <item>41.0</item>
     </string-array>
+    <string-array name="cargo">
+        <item>Auxiliar</item>
+        <item>Professora</item>
+    </string-array>
 
 </resources>

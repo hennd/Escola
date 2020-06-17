@@ -20,7 +20,7 @@ import java.util.Calendar;
 public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, AdapterView.OnItemSelectedListener {
     Button btnFebrehora;
     EditText edtFebrehora;
-    int hora, minuto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,8 +112,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
+
     }
 
     @Override

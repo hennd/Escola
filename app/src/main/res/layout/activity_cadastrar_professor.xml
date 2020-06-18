@@ -13,14 +13,14 @@
         android:id="@+id/txtDadosProfessor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dados do Professor" />
+        android:text="Dados do Professora" />
 
     <EditText
         android:id="@+id/edtNomeProfessora"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="Nome Professor"
+        android:hint="Nome Professora"
         android:inputType="textPersonName" />
 
     <EditText
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="Telefone Professor"
+        android:hint="Telefone Professora"
         android:inputType="textPersonName" />
 
     <Spinner
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="Email Professor"
+        android:hint="Email Professora"
         android:inputType="textPersonName" />
 
     <EditText
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="Senha Professor"
+        android:hint="Senha Professora"
         android:inputType="textPersonName" />
 
     <Button
@@ -60,9 +60,10 @@
         android:text="Cadastrar" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnVoltar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:onClick="voltarTelaAlunos"
+        android:text="Voltar" />
 
 </LinearLayout>

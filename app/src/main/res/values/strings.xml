@@ -10,7 +10,7 @@
         <item>Não dormiu</item>
         <item>Manhã</item>
         <item>Tarde</item>
-        <item>Manhã/Tarde</item>
+        <item>Manhã e Tarde</item>
 
     </string-array>
     <string-array name="tempo_sono">

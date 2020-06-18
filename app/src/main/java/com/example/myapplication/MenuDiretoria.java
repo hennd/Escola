@@ -23,9 +23,18 @@ public class MenuDiretoria extends AppCompatActivity {
         startActivity(intent);
         finish();
     } public void abrirTelaProfessores(View view) {
-        Intent intent = new Intent(MenuDiretoria.this, CadastrarProfessor.class);
+        Intent intent = new Intent(MenuDiretoria.this, TelaProfessorDiretoria.class);
         startActivity(intent);
         finish();
+    }
+    public void abrirTelaCardapio(View view){
+
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MenuDiretoria.this, Agenda.class);
+        startActivity(intent);
+        finish();
+
+        Toast.makeText(this, "", Toast.LENGTH_LONG).show();
     }
 
     public void sair(View view){

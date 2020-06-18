@@ -55,6 +55,7 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
                 registerNewUser();
             }
         });
+
     }
 
     @Override
@@ -79,10 +80,12 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
     }
     private void registerNewUser() {
 
-        String nomeProfessora,telefoneProfessora, cargoProfessora, emailProfessora, senhaProfessora;
+        String nomeProfessora,telefoneProfessora, cargoProfessora,  emailProfessora, senhaProfessora;
+        Integer cargoSpinnerProfessora;
         nomeProfessora = edtNomeProfessora.getText().toString();
         telefoneProfessora = edtTelefoneProfessora.getText().toString();
-        cargoProfessora = spinner_cargo_professora.getSelectedItem().toString();
+        cargoProfessora= spinner_cargo_professora.getSelectedItem().toString();
+        cargoSpinnerProfessora = spinner_cargo_professora.getSelectedItemPosition();
         emailProfessora = edtEmailProfessora.getText().toString();
         senhaProfessora = edtSenhaProfessora.getText().toString();
 
@@ -108,7 +111,7 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
             Toast.makeText(getApplicationContext(), "Insira a senha", Toast.LENGTH_LONG).show();
             return;
         }
-
+        professor.setCargoSpinnerProfessora(cargoSpinnerProfessora);
         professor.setNomeProfessora(edtNomeProfessora.getText().toString());
         professor.setTelefoneProfessora(edtTelefoneProfessora.getText().toString());
         professor.setCargoProfessora(spinner_cargo_professora.getSelectedItem().toString());
@@ -150,5 +153,10 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
         myRef.child(key).setValue(professor);
 
 
+    }
+    public void voltarTelaAlunos(View view) {
+        Intent intent = new Intent(CadastrarProfessor.this, TelaProfessorDiretoria.class);
+        startActivity(intent);
+        finish();
     }
 }

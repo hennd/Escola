@@ -3,51 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_height="match_parent"
-    tools:context=".UpdateAluno">
-
-
+    tools:context=".UpdateProfessora">
 
     <TextView
-        android:id="@+id/txtDadosAtualizaAlunos"
+        android:id="@+id/txtDadosProfessora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dados do Aluno" />
+        android:text="Dados da Professora"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="74dp" />
 
     <EditText
-        android:id="@+id/edtNomeAlunoAtualiza"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/edtNomeMaeAlunoAtualiza"
+        android:id="@+id/edtNomeProfessoraAtualiza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-        />
     <EditText
-        android:id="@+id/edtNomePaiAlunoAtualiza"
+        android:id="@+id/edtTelefoneProfessoraAtualiza"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-        />
-    <EditText
-        android:id="@+id/edtTelefoneContatoAlunoAtualiza"
+    <Spinner
+        android:id="@+id/spinner_cargo_professora_atualiza"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        />
+        android:layout_height="35dp" />
 
     <Button
-        android:id="@+id/btnAtualizar"
+        android:id="@+id/btnAtualizaProfessora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Atualizar" />
+
     <Button
-        android:id="@+id/btnVoltar"
+        android:id="@+id/btnVoltarTelaProfessores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Voltar" />
-
 </LinearLayout>

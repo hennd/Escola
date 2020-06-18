@@ -36,7 +36,6 @@ public class Editar extends AppCompatActivity {
         setContentView(R.layout.activity_editar);
 
         editarBotao = (Button) findViewById(R.id.botaoEditar);
-        editTeste = (EditText) findViewById(R.id.edtTeste);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("alunos");
 
@@ -47,7 +46,7 @@ public class Editar extends AppCompatActivity {
         editarBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editarAluno();
+                teste();
             }
         });
     }
@@ -80,7 +79,6 @@ public class Editar extends AppCompatActivity {
     }
     public void editarAluno(){
 
-
         final String nome=spinnerEditar.getSelectedItem().toString();
         reference = FirebaseDatabase.getInstance().getReference();
         reference.child("alunos").orderByChild("nomeAluno").equalTo(nome).addValueEventListener(new ValueEventListener() {
@@ -98,5 +96,9 @@ public class Editar extends AppCompatActivity {
         }
     });
 
+    }
+    public void teste(){
+        reference = FirebaseDatabase.getInstance().getReference();
+        reference.child("Turmas").push();
     }
 }

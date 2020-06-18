@@ -6,9 +6,18 @@ public class Professor {
     private String nomeProfessora;
     private String telefoneProfessora;
     private String cargoProfessora;
+    private Integer cargoSpinnerProfessora;
     private String emailProfessora;
     private String senhaProfessora;
     private String keyUser;
+
+    public Integer getCargoSpinnerProfessora() {
+        return cargoSpinnerProfessora;
+    }
+
+    public void setCargoSpinnerProfessora(Integer cargoSpinnerProfessora) {
+        this.cargoSpinnerProfessora = cargoSpinnerProfessora;
+    }
 
     public String getKeyUser() {
         return keyUser;

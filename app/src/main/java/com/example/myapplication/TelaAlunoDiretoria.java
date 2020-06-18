@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,9 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TelaAlunoDiretoria extends AppCompatActivity {
+
     Button btnEditarAluno;
     Button btnExcluirAluno;
-    EditText editTeste;
     Spinner spinnerEditar;
     DatabaseReference databaseReference;
     ValueEventListener listener;
@@ -50,8 +49,6 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
         btnExcluirAluno = (Button)findViewById(R.id.btnExcluirAluno);
         txtAlunos =  (TextView) findViewById(R.id.txtAlunos);
         databaseReference = FirebaseDatabase.getInstance().getReference("alunos");
-
-
 
         listaAlunosSpinner();
         btnExcluirAluno.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +128,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                editTeste.setText("falhou");
+
             }
         });
 
@@ -158,7 +155,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                editTeste.setText("falhou");
+
             }
         });
 

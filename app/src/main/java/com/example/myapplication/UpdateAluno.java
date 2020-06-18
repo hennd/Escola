@@ -46,7 +46,7 @@ public class UpdateAluno extends AppCompatActivity {
             public void onClick(View v) {
                 atualizarDadosAluno();
             }
-        });
+         });
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

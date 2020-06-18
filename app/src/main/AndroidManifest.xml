@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateAluno"></activity>
+        <activity android:name=".UpdateProfessora"></activity>
+        <activity android:name=".TelaProfessorDiretoria" />
+        <activity android:name=".UpdateAluno"/>
+
         <activity android:name=".CadastrarProfessor" />
         <activity android:name=".TelaAlunoDiretoria" />
         <activity android:name=".MenuDiretoria" />
@@ -20,12 +23,14 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>/>
         </activity>
-        <activity android:name=".Editar" />
+        <activity android:name=".Editar" >
 
+        </activity>
+        <activity android:name=".CadastrarAluno" >
 
-        <activity android:name=".CadastrarAluno" />
+        </activity>
         <activity android:name=".Agenda" />
         <activity android:name=".Dash" />
         <activity android:name=".MainActivity" />

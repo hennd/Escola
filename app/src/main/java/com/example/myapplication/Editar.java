@@ -46,7 +46,7 @@ public class Editar extends AppCompatActivity {
         editarBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                teste();
+                editarAluno();
             }
         });
     }
@@ -73,10 +73,7 @@ public class Editar extends AppCompatActivity {
             }
         });
     }
-    public void alterarEdt(){
 
-        editTeste.setText("nome");
-    }
     public void editarAluno(){
 
         final String nome=spinnerEditar.getSelectedItem().toString();

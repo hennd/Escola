@@ -27,6 +27,11 @@ public class MenuDiretoria extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void abrirTelaTurmas(View view) {
+        Intent intent = new Intent(MenuDiretoria.this, AdicionarTurma.class);
+        startActivity(intent);
+        finish();
+    }
     public void abrirTelaCardapio(View view){
 
         FirebaseAuth.getInstance().signOut();

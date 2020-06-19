@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Turmas"
         android:textAlignment="center"
-        android:onClick="sair"
+        android:onClick="abrirTelaTurmas"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="267dp" />
     <Button
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Cardapio"
         android:textAlignment="center"
-        android:onClick="sair"
+        android:onClick="abrirTelaCardapio"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="267dp" />
     <Button

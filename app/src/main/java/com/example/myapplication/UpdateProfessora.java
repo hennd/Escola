@@ -86,7 +86,7 @@ public class UpdateProfessora extends AppCompatActivity implements AdapterView.O
 
         String key = TelaProfessorDiretoria.keyUserProfessoraEditar;
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("professores").orderByChild("keyUser").equalTo(key).addValueEventListener(new ValueEventListener() {
+        reference.child("professores").orderByChild("keyUser").equalTo(key).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot professorasSnapShot : dataSnapshot.getChildren()) {

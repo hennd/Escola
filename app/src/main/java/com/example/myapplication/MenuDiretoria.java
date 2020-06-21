@@ -28,7 +28,7 @@ public class MenuDiretoria extends AppCompatActivity {
         finish();
     }
     public void abrirTelaTurmas(View view) {
-        Intent intent = new Intent(MenuDiretoria.this, AdicionarTurma.class);
+        Intent intent = new Intent(MenuDiretoria.this, GerenciarTurmas.class);
         startActivity(intent);
         finish();
     }

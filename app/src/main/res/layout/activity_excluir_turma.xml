@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ExcluirTurma">
+
+    <TextView
+        android:id="@+id/txtExcluirTurmas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Excluir Turma"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <Spinner
+        android:id="@+id/spinner_excluir_turmas"
+        android:layout_width="409dp"
+        android:layout_height="30dp"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="339dp" />
+
+    <Button
+        android:id="@+id/btnExcluirTurma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Excluir Turma Selecionada"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="376dp" />
+</LinearLayout>

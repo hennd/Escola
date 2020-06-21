@@ -36,6 +36,7 @@ public class UpdateAluno extends AppCompatActivity {
         edtTelefoneContatoAlunoAtualiza= (EditText)findViewById(R.id.edtTelefoneContatoAlunoAtualiza);
         btnAtualizar= (Button)findViewById(R.id.btnAtualizar);
         btnVoltar= (Button)findViewById(R.id.btnVoltar);
+
         edtNomeAlunoAtualiza.setText(TelaAlunoDiretoria.nomeUserAlunoEditar);
         edtNomeMaeAlunoAtualiza.setText(TelaAlunoDiretoria.nomeMaeUserAlunoEditar);
         edtNomePaiAlunoAtualiza.setText(TelaAlunoDiretoria.nomePaiUserAlunoEditar);
@@ -58,7 +59,7 @@ public class UpdateAluno extends AppCompatActivity {
 
         String key = TelaAlunoDiretoria.keyUserAlunoEditar;
         reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("alunos").orderByChild("keyUser").equalTo(key).addValueEventListener(new ValueEventListener() {
+        reference.child("alunos").orderByChild("keyUser").equalTo(key).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
@@ -68,7 +69,11 @@ public class UpdateAluno extends AppCompatActivity {
                     alunosSnapShot.getRef().child("nomePaiAluno").setValue(edtNomePaiAlunoAtualiza.getText().toString());
                     alunosSnapShot.getRef().child("telefoneAluno").setValue(edtTelefoneContatoAlunoAtualiza.getText().toString());
                     Toast.makeText(UpdateAluno.this, "Dados Atualizados", Toast.LENGTH_LONG).show();
-                    recreate();
+                     recreate();
+
+
+
+
                 }
             }
 

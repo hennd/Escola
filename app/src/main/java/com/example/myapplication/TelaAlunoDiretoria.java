@@ -38,6 +38,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
     public static String keyUserAlunoEditar;
 
 
+
     TextView txtAlunos;
 
     @Override
@@ -51,6 +52,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("alunos");
 
         listaAlunosSpinner();
+
         btnExcluirAluno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,8 +123,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
                     startActivity(intent);
                     finish();
 
-                   // DatabaseReference agoravai = reference.child("alunos").child(aluno.getKeyUser()).child(aluno.getNomeAluno()).child("Agenda").push();
-                    // editTeste.setText(aluno.getNomeMaeAluno());
+
                 }
             }
 

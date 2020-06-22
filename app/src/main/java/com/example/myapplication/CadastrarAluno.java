@@ -132,7 +132,7 @@ public class CadastrarAluno extends AppCompatActivity {
 
                             CadastrarAlunoDatabase(aluno);
 
-                            Intent intent = new Intent(CadastrarAluno.this, Dash.class);
+                            Intent intent = new Intent(CadastrarAluno.this, TelaAlunoDiretoria.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_LONG).show();

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarAluno">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,62 +16,104 @@
     android:padding="16dp"
     tools:context=".CadastrarAluno">
 
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
-        android:text="Dados do Aluno" />
+        android:layout_marginTop="28dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Dados do Aluno"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/nomeAluno"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:hint="Nome Aluno" />
+        android:layout_marginTop="30dp"
+        android:hint="Nome Aluno"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="6dp" />
+
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/nomeMaeAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Nome da Mãe"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/nomeAluno"
+        tools:layout_editor_absoluteX="16dp" />
+
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/nomePaiAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Nome do Pai"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/nomeMaeAluno"
+        tools:layout_editor_absoluteX="16dp" />
+
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/telefoneContatoAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Telefone"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/nomePaiAluno"
+        tools:layout_editor_absoluteX="28dp" />
 
     <EditText
         android:id="@+id/email"
+        android:background="@drawable/redondo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email" />
+        android:layout_marginTop="15dp"
+        android:hint="Email"
+        app:layout_constraintTop_toBottomOf="@+id/telefoneContatoAluno"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/password"
+        android:background="@drawable/redondo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Password"
-        android:inputType="textPassword" />
-
-
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar" />
+        android:layout_marginTop="30dp"
+        android:text="Cadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:layout_editor_absoluteX="16dp" />
+
     <Button
         android:id="@+id/btnVoltarTelaAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:onClick="voltarTelaAlunos"
         android:text="Voltar"
-        android:onClick="voltarTelaAlunos"/>
+        app:layout_constraintTop_toBottomOf="@+id/register"
+        tools:layout_editor_absoluteX="16dp" />
 
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

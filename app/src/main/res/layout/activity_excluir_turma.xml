@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExcluirTurma">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,27 +14,99 @@
     tools:context=".ExcluirTurma">
 
     <TextView
-        android:id="@+id/txtExcluirTurmas"
+        android:id="@+id/txtNovaTurma"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+
+        android:background="@drawable/titulo_redondo"
+        android:text="Adicionar Turma"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/edtNomeTurma"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:hint="Nome da Turma"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/txtNovaTurma"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btnCriarTurma"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Criar Turma"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeTurma"
+        tools:layout_editor_absoluteX="-2dp" />
+
+    <TextView
+        android:id="@+id/txtExcluirTurmas"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/titulo_redondo"
         android:text="Excluir Turma"
         android:textAlignment="center"
         android:textSize="30dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="260dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCriarTurma"
+        tools:layout_editor_absoluteX="-2dp" />
 
     <Spinner
         android:id="@+id/spinner_excluir_turmas"
-        android:layout_width="409dp"
-        android:layout_height="30dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="339dp" />
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtExcluirTurmas"
+        app:layout_constraintTop_toBottomOf="@+id/txtExcluirTurmas" />
 
     <Button
         android:id="@+id/btnExcluirTurma"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
         android:text="Excluir Turma Selecionada"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="376dp" />
-</LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/spinner_excluir_turmas"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Button
+        android:id="@+id/btnIrParaGerenciarTurmas"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/titulo_redondo"
+        android:onClick="irParaGerenciar"
+        android:text="Gerenciar Turmas"
+        app:layout_constraintTop_toBottomOf="@+id/btnExcluirTurma"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btnVoltarMenuTurmas"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/titulo_redondo"
+        android:onClick="irParaGerenciar"
+        android:text="Voltar"
+        app:layout_constraintTop_toBottomOf="@+id/btnIrParaGerenciarTurmas"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

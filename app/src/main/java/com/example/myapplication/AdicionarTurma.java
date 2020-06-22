@@ -71,7 +71,8 @@ public class AdicionarTurma extends AppCompatActivity {
                 turma.setKeyUserTurma(key);
                 turma.setNomeTurma(nomeTurma);
                 reference.child(key).setValue(turma);
-
+                listaProfessoresNova.clear();
+                listaAlunosNova.clear();
         Toast.makeText(this, "Turma criada com sucesso!", Toast.LENGTH_SHORT).show();
 
             }

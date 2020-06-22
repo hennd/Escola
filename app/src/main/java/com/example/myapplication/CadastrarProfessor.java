@@ -111,6 +111,7 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
             Toast.makeText(getApplicationContext(), "Insira a senha", Toast.LENGTH_LONG).show();
             return;
         }
+
         professor.setCargoSpinnerProfessora(cargoSpinnerProfessora);
         professor.setNomeProfessora(edtNomeProfessora.getText().toString());
         professor.setTelefoneProfessora(edtTelefoneProfessora.getText().toString());

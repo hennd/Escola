@@ -35,7 +35,7 @@ public class UpdateAluno extends AppCompatActivity {
         edtNomePaiAlunoAtualiza= (EditText)findViewById(R.id.edtNomePaiAlunoAtualiza);
         edtTelefoneContatoAlunoAtualiza= (EditText)findViewById(R.id.edtTelefoneContatoAlunoAtualiza);
         btnAtualizar= (Button)findViewById(R.id.btnAtualizar);
-        btnVoltar= (Button)findViewById(R.id.btnVoltar);
+        btnVoltar= (Button)findViewById(R.id.btnBack);
 
         edtNomeAlunoAtualiza.setText(TelaAlunoDiretoria.nomeUserAlunoEditar);
         edtNomeMaeAlunoAtualiza.setText(TelaAlunoDiretoria.nomeMaeUserAlunoEditar);

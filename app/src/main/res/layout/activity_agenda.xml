@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,28 +8,46 @@
     android:layout_height="match_parent"
     tools:context=".Agenda">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/fundocinza"
-        android:orientation="horizontal"
-        tools:context=".Agenda">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".Agenda">
 
         <TextView
             android:id="@+id/txtRefeicoes"
             android:layout_width="196dp"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/titulo_redondo"
             android:text="Refeições"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/btnDATA" />
+
+        <TextView
+            android:id="@+id/txtRotinaDoAluno"
+            android:layout_width="177dp"
+            android:layout_height="79dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Rotina do Aluno"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtData"
+            app:layout_constraintEnd_toStartOf="@+id/txtData"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtData"
+            app:layout_constraintVertical_bias="0.461" />
 
         <TextView
 
@@ -37,10 +56,10 @@
             android:layout_height="46dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/titulo_redondo"
-            android:text="Atividade do dia"
+            android:text="Atividades do dia"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -57,7 +76,7 @@
             android:text="Atividade Especializada"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -73,7 +92,7 @@
             android:text="Observações"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -90,7 +109,7 @@
             android:text="Sono"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtLegenda" />
@@ -105,7 +124,7 @@
             android:gravity="center"
             android:text="Febre"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtEvacuacao" />
@@ -120,7 +139,7 @@
             android:text="Evacuação"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSono" />
@@ -427,6 +446,7 @@
             app:layout_constraintTop_toTopOf="@+id/edtHoraFebre" />
 
         <RadioGroup
+            android:id="@+id/rgFebre"
             android:layout_width="195dp"
             android:layout_height="35dp"
             android:orientation="horizontal"
@@ -434,22 +454,70 @@
             app:layout_constraintStart_toStartOf="@+id/edtMedicacao"
             app:layout_constraintTop_toTopOf="@+id/txtFebre">
 
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Sim" />
+                <RadioButton
+                    android:id="@+id/rbFebreSim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sim" />
 
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Não" />
+                <RadioButton
+                    android:id="@+id/rbFebreNao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Não" />
         </RadioGroup>
 
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.343"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtObservacoes" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="104dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Voltar"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSalvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toEndOf="@+id/btnSalvar"
+            app:layout_constraintTop_toTopOf="@+id/btnSalvar"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnDATA"
+            android:layout_width="48dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/ic_iconfinder_organizer_1118206"
+            app:layout_constraintEnd_toEndOf="@+id/btnHoraFebre"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/redondo"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDATA"
+            app:layout_constraintEnd_toStartOf="@+id/btnDATA"
+            app:layout_constraintTop_toTopOf="@+id/btnDATA"
+            app:layout_constraintVertical_bias="0.531" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

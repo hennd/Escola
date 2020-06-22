@@ -28,18 +28,16 @@ public class MenuDiretoria extends AppCompatActivity {
         finish();
     }
     public void abrirTelaTurmas(View view) {
-        Intent intent = new Intent(MenuDiretoria.this, GerenciarTurmas.class);
+        Intent intent = new Intent(MenuDiretoria.this, ExcluirTurma.class);
         startActivity(intent);
         finish();
     }
     public void abrirTelaCardapio(View view){
 
-        FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(MenuDiretoria.this, Agenda.class);
         startActivity(intent);
         finish();
 
-        Toast.makeText(this, "", Toast.LENGTH_LONG).show();
     }
 
     public void sair(View view){
@@ -49,6 +47,6 @@ public class MenuDiretoria extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        Toast.makeText(this, "", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Saindo", Toast.LENGTH_LONG).show();
     }
 }

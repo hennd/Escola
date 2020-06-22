@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GerenciarTurmas"></activity>
+        <activity android:name=".GerenciarTurmas" />
         <activity android:name=".ExcluirTurma" />
         <activity android:name=".AdicionarTurma" />
         <activity android:name=".UpdateProfessora" />

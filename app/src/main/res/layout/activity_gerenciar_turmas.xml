@@ -1,55 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     tools:context=".GerenciarTurmas">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Agenda"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:id="@+id/btnVoltar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Voltar"
+        app:layout_constraintTop_toBottomOf="@+id/btnExcluirProfessorTurma"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/txtVisualizarTurmas"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/titulo_redondo"
         android:text="Gerenciar Turmas"
         android:textAlignment="center"
-        android:textSize="30dp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="517dp" />
+        android:textSize="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Spinner
         android:id="@+id/spinner_gerenciar_turmas"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="589dp" />
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtVisualizarTurmas"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/txtAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Alunos"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_gerenciar_turmas"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ListView
         android:id="@+id/lvAlunosTurmaSelecionada"
+
         android:layout_width="match_parent"
-        android:layout_height="218dp" />
+        android:layout_height="388dp"
+
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlunos"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/txtAlunoAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Selecione o Aluno Para Adicionar"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/lvAlunosTurmaSelecionada"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Spinner
         android:id="@+id/spinner_todos_alunos_gerenciar_turma"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlunoAdd"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <Button
         android:id="@+id/btnAdcionarAlunoTurma"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adicionar Aluno Na Turma" />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Adicionar Aluno Na Turma"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_todos_alunos_gerenciar_turma"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <TextView
+        android:id="@+id/txtExcluirAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Selecione o Aluno Para Excluir"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdcionarAlunoTurma"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Spinner
         android:id="@+id/spinner_alunos_para_excluir_turma"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtExcluirAluno"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <Button
         android:id="@+id/btnExcluirAlunoTurma"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Excluir Aluno da Turma" />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Excluir Aluno da Turma"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_alunos_para_excluir_turma"
+        tools:layout_editor_absoluteX="-16dp" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/txtProfessores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Professores"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnExcluirAlunoTurma"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <ListView
+        android:id="@+id/lvProfessoresTurmaSelecionada"
+
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfessores"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/txtProfessorAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Selecione o Professor Para Adicionar"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/lvProfessoresTurmaSelecionada"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Spinner
+        android:id="@+id/spinner_todos_professores_gerenciar_turma"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfessorAdd"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Button
+        android:id="@+id/btnAdcionarProfessorTurma"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Adicionar Professora Na Turma"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_todos_professores_gerenciar_turma"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/txtExcluirProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Selecione o Professor Para Excluir"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdcionarProfessorTurma"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Spinner
+        android:id="@+id/spinner_professores_para_excluir_turma"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtExcluirProfessor"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <Button
+        android:id="@+id/btnExcluirProfessorTurma"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:onClick="excluirProfessoresTurma"
+        android:text="Excluir Professora da Turma"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_professores_para_excluir_turma"
+        tools:layout_editor_absoluteX="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

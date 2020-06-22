@@ -30,12 +30,12 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
     ArrayAdapter<String> adapterEditar;
     ArrayList<String> spinnerEditarLista;
     DatabaseReference reference;
-    public static String nomeUserAlunoEditar;
-    public static String nomeMaeUserAlunoEditar;
-    public static String nomePaiUserAlunoEditar;
-    public static String telefoneUserAlunoEditar;
-    public static String emailUserAlunoEditar;
-    public static String keyUserAlunoEditar;
+    public static String nomeUserAlunoEditar =" ";
+    public static String nomeMaeUserAlunoEditar=" ";
+    public static String nomePaiUserAlunoEditar=" ";
+    public static String telefoneUserAlunoEditar=" ";
+    public static String emailUserAlunoEditar=" ";
+    public static String keyUserAlunoEditar=" ";
 
 
 
@@ -66,6 +66,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
                 editarAluno();
             }
         });
+
     }
     public void abrirTelaAlunos(View view) {
         Intent intent = new Intent(TelaAlunoDiretoria.this, CadastrarAluno.class);
@@ -77,6 +78,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
     public void listaAlunosSpinner(){
         listener = databaseReference.addValueEventListener(new ValueEventListener() {
 
@@ -100,6 +102,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void editarAluno(){
@@ -129,7 +132,7 @@ public class TelaAlunoDiretoria extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                txtAlunos.setText("errou");
             }
         });
 

@@ -11,11 +11,17 @@
 
     <TextView
         android:id="@+id/txtDadosProfessor"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dados do Professora" />
+        android:background="@drawable/titulo_redondo"
+        android:text="Dados do Professora"
+        android:textAlignment="center"
+        android:textSize="40dp" />
 
     <EditText
+        android:background="@drawable/redondo"
+
         android:id="@+id/edtNomeProfessora"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -24,6 +30,8 @@
         android:inputType="textPersonName" />
 
     <EditText
+        android:background="@drawable/redondo"
+
         android:id="@+id/edtTelefoneProfessora"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -38,6 +46,8 @@
 
 
     <EditText
+        android:background="@drawable/redondo"
+
         android:id="@+id/edtEmailProfessora"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -46,6 +56,8 @@
         android:inputType="textPersonName" />
 
     <EditText
+        android:background="@drawable/redondo"
+
         android:id="@+id/edtSenhaProfessora"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -54,13 +66,17 @@
         android:inputType="textPersonName" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
+
         android:id="@+id/btnCadastrarProfessora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cadastrar" />
 
     <Button
-        android:id="@+id/btnVoltar"
+        android:background="@drawable/titulo_redondo"
+
+        android:id="@+id/btnBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="voltarTelaAlunos"

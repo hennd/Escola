@@ -8,33 +8,5 @@
     tools:context=".AdicionarTurma">
 
 
-    <TextView
-        android:id="@+id/txtNovaTurma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Adicionar Turma"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="32dp" />
-
-    <EditText
-        android:id="@+id/edtNomeTurma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nome da Turma"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="106dp" />
-
-    <Button
-        android:id="@+id/btnCriarTurma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Criar Turma"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="159dp" />
-
 
 </LinearLayout>

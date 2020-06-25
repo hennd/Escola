@@ -78,6 +78,7 @@ public class Login extends AppCompatActivity {
         passwordTV = findViewById(R.id.password);
         loginBtn = findViewById(R.id.login);
     }
+
     private void loginTelaInicial(final String email, String senha) {
         mAuth.signInWithEmailAndPassword(email, senha)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -147,7 +148,6 @@ public class Login extends AppCompatActivity {
        firebaseAuth = firebaseAuth.getInstance();
 
        if(currentUser!= null) {
-
            abrirTelaInicial();
        }
 

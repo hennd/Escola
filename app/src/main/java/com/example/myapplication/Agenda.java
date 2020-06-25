@@ -291,8 +291,8 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         dadosAgenda.setTempoSono(sono);
         dadosAgenda.setFebre_sim_nao(temfebre);
 
-        myRef = database.getReference("alunos").child("Agenda");
-        String key = myRef.child("agenda").push().getKey();
+        myRef = database.getReference("Agenda");
+        String key = myRef.child("Agenda").push().getKey();
 
         dadosAgenda.setKeyAgenda(key);
 

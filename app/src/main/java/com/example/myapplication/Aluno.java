@@ -11,7 +11,15 @@ public class Aluno {
     private String emailAluno;
     private String password;
     private String keyUser;
+    private String keyTurma;
 
+    public String getKeyTurma() {
+        return keyTurma;
+    }
+
+    public void setKeyTurma(String keyTurma) {
+        this.keyTurma = keyTurma;
+    }
     @Exclude
     public String getPassword() {
         return password;

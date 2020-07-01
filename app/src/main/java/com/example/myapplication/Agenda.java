@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
@@ -7,7 +8,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateFormat;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,10 +21,14 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -56,10 +62,13 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
     private FirebaseAuth mAuth;
     private FirebaseDatabase database;
     private DatabaseReference myRef;
+    private FirebaseDatabase databaseCard;
+    private DatabaseReference myRefCard;
     TextView dataedt;
     private Button botaoData;
     private TextView textoData;
     private DatePickerDialog datapicker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,26 +86,26 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         edtLanche2 = (EditText)findViewById(R.id.edtLanche2);
         edtJantar = (EditText)findViewById(R.id.edtJantar);
 
-        spinnerLanche1=(Spinner)findViewById(R.id.spinner_lanche1);
+        spinnerLanche1=(Spinner)findViewById(R.id.spinner_lanche);
         spinnerAlmoco=(Spinner)findViewById(R.id.spinner_almoco);
         spinnerLanche2=(Spinner)findViewById(R.id.spinner_lanche2);
-        spinnerJantar=(Spinner)findViewById(R.id.spinner_jantar);
+        spinnerJantar=(Spinner)findViewById(R.id.spinner_jantarv);
 
         spinnerSono=(Spinner)findViewById(R.id.spinner_sono_turnos);
         spinnerSonoTempo=(Spinner)findViewById(R.id.spinner_tempo_sono);
 
         spinnerEvacuacao=(Spinner)findViewById(R.id.spinner_evacuacao);
         btnVoltar=(Button)findViewById(R.id.btnBack);
-        rgFebre=(RadioGroup)findViewById(R.id.rgFebre);
-        rbFebreSim=(RadioButton)findViewById(R.id.rbFebreSim);
-        rbFebreNao=(RadioButton)findViewById(R.id.rbFebreNao);
+        rgFebre=(RadioGroup)findViewById(R.id.rgFebrev);
+        rbFebreSim=(RadioButton)findViewById(R.id.rbFebreSimv);
+        rbFebreNao=(RadioButton)findViewById(R.id.rbFebreNaov);
         spinnerFebreTemperatura=(Spinner)findViewById(R.id.spinner_febre_temp);
         medicacaoFebre=(EditText)findViewById(R.id.edtMedicacao);
         atividadeDiaManha=(EditText)findViewById(R.id.edtAtividadedoDiaManha);
         atividadeDiaTarde=(EditText)findViewById(R.id.edtAtividadedoDiaTarde);
         atividadeEspecializada=(EditText)findViewById(R.id.edtAtividadeEspecializada);
         observacoes=(EditText)findViewById(R.id.edtObservacoes);
-
+        DatabaseReference refenciaCardapio=FirebaseDatabase.getInstance().getReference("agendas").child("-MB1oAIFi-Du_kUSUDh8");
         btnFebrehora=(Button) findViewById(R.id.btnHoraFebre);
         edtFebrehora=(EditText) findViewById(R.id.edtHoraFebre);
         btnSalvar= (Button) findViewById(R.id.btnSalvar);
@@ -104,7 +113,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         botaoData=(Button)findViewById(R.id.btnDATA);
         textoData=(TextView)findViewById(R.id.txtData);
 
-        Spinner lanche = findViewById(R.id.spinner_lanche1);
+        Spinner lanche = findViewById(R.id.spinner_lanche);
         ArrayAdapter<CharSequence> lancheAdapter = ArrayAdapter.createFromResource(this,R.array.comeu,android.R.layout.simple_spinner_item);
         lancheAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         lanche.setAdapter(lancheAdapter);
@@ -122,7 +131,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         lanche2.setAdapter(lanche2Adapter);
         lanche2.setOnItemSelectedListener(this);
 
-        Spinner jantar = findViewById(R.id.spinner_jantar);
+        Spinner jantar = findViewById(R.id.spinner_jantarv);
         ArrayAdapter<CharSequence> jantarAdapter = ArrayAdapter.createFromResource(this,R.array.comeu,android.R.layout.simple_spinner_item);
         jantarAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         jantar.setAdapter(jantarAdapter);
@@ -156,12 +165,37 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         febreTemp.setOnItemSelectedListener(this);
 
 
+        edtLanche2.setEnabled(false);
+        edtJantar.setEnabled(false);
+        edtLanche1.setEnabled(false);
+        edtAlmoco.setEnabled(false);
 
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
-
+        databaseCard = FirebaseDatabase.getInstance();
         dadosAgenda = new DadosAgenda();
+
+
+        myRefCard = databaseCard.getReference("cardapio");
+
+        myRefCard.orderByChild("keyCardapio").equalTo("-MB1oAIFi-Du_kUSUDh8").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot cardSnap : dataSnapshot.getChildren()) {
+                    Cardapio card = cardSnap.getValue(Cardapio.class);
+                    edtLanche2.setText(card.getLanche2());
+                    edtJantar.setText(card.getJantar());
+                    edtLanche1.setText(card.getLanche1());
+                    edtAlmoco.setText(card.getAlmoco());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
@@ -226,6 +260,10 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
 
     }
     public void salvarAgenda(){
+
+
+
+
         String temfebre="talvez", data;
         String edtlanche1, edtalmoco, edtlanche2, edtjantar, rgfebre, rbfebreSim,rbfebreNao,medicacaofebre,temperatura,sono;
         String atividadediamanha,atividadediatarde,atividadeespecializada,edobservacoes,edtfebrehora;
@@ -267,7 +305,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         dadosAgenda.setAtividadeDiaManha(atividadediamanha);
         dadosAgenda.setAtividadeDiaTarde(atividadediatarde);
         dadosAgenda.setAtividadeEspecializada(atividadeespecializada);
-        dadosAgenda.setDataAgenda(data);
+        dadosAgenda.setDataAgenda(TelaInicialProfessor.dataselecionada);
         dadosAgenda.setEvacuacao(spinnerEvacuacao.getSelectedItem().toString());
         dadosAgenda.setSpinnerEvacuacao(spinnerevacuacao);
         dadosAgenda.setObservacoes(edobservacoes);
@@ -290,15 +328,13 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         dadosAgenda.setSono(spinnerSonoTempo.getSelectedItem().toString());
         dadosAgenda.setTempoSono(sono);
         dadosAgenda.setFebre_sim_nao(temfebre);
+        dadosAgenda.setNomeDataAgenda(TelaInicialProfessor.nomealunoselecionado+TelaInicialProfessor.dataselecionada);
 
-        myRef = database.getReference("Agenda");
-        String key = myRef.child("Agenda").push().getKey();
+        myRef = database.getReference("agendas");
+        String key = myRef.child("agendas").push().getKey();
 
         dadosAgenda.setKeyAgenda(key);
-
         myRef.child(key).setValue(dadosAgenda);
-
-
 
 
 

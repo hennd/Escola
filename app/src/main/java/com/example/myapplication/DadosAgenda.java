@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 public class DadosAgenda {
 
+    private String nomeDataAgenda;
     private String KeyAgenda;
 
     private String dataAgenda;
@@ -36,6 +37,14 @@ public class DadosAgenda {
     private String atividadeEspecializada;
 
     private String observacoes;
+
+    public String getNomeDataAgenda() {
+        return nomeDataAgenda;
+    }
+
+    public void setNomeDataAgenda(String nomeDataAgenda) {
+        this.nomeDataAgenda = nomeDataAgenda;
+    }
 
     public String getKeyAgenda() {
         return KeyAgenda;

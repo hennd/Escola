@@ -19,7 +19,7 @@
             android:id="@+id/txtRefeicoes"
             android:layout_width="196dp"
             android:layout_height="50dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/titulo_redondo"
             android:text="Refeições"
             android:textAlignment="center"
@@ -27,7 +27,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnDATA" />
 
@@ -35,6 +35,7 @@
             android:id="@+id/txtRotinaDoAluno"
             android:layout_width="177dp"
             android:layout_height="79dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/titulo_redondo"
             android:text="Rotina do Aluno"
@@ -44,10 +45,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/txtData"
             app:layout_constraintEnd_toStartOf="@+id/txtData"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.709"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txtData"
-            app:layout_constraintVertical_bias="0.461" />
+            app:layout_constraintVertical_bias="0.363" />
 
         <TextView
 
@@ -67,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edtMedicacao" />
 
         <TextView
-            android:id="@+id/txtAtividadeEspecializada"
+            android:id="@+id/txtAtividadeEspecializadav"
 
             android:layout_width="299dp"
             android:layout_height="50dp"
@@ -82,6 +83,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtAtividadedoDiaTarde" />
+
 
         <TextView
             android:id="@+id/txtObservacoes"
@@ -145,12 +147,12 @@
             app:layout_constraintTop_toBottomOf="@+id/txtSono" />
 
         <TextView
-            android:id="@+id/txtLanche1"
+            android:id="@+id/txtLanche"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
-            android:text="Lanche"
+            android:text="Lanche 1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtRefeicoes" />
 
@@ -158,49 +160,48 @@
             android:id="@+id/txtAlmoco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="21dp"
             android:text="Almoço"
-            app:layout_constraintEnd_toEndOf="@+id/txtLanche1"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/txtLanche1"
-            app:layout_constraintTop_toBottomOf="@+id/txtLanche1" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtLanche1" />
 
         <TextView
             android:id="@+id/txtLanche2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
-            android:text="Lanche"
-            app:layout_constraintEnd_toEndOf="@+id/txtAlmoco"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/txtAlmoco"
+            android:text="Lanche 2"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtAlmoco" />
 
         <TextView
             android:id="@+id/txtJantar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:text="Jantar"
-            app:layout_constraintEnd_toEndOf="@+id/txtLanche2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/txtLanche2"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtLanche2" />
 
         <EditText
+            android:textColor="@drawable/edit_text_selector"
             android:id="@+id/edtLanche1"
             android:layout_width="210dp"
             android:layout_height="40dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="5dp"
             android:background="@drawable/redondo"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="@+id/txtLanche1"
-            app:layout_constraintStart_toEndOf="@+id/txtLanche1"
-            app:layout_constraintTop_toTopOf="@+id/txtLanche1" />
+            app:layout_constraintBottom_toBottomOf="@+id/txtLanche"
+            app:layout_constraintStart_toEndOf="@+id/txtLanche"
+            app:layout_constraintTop_toTopOf="@+id/txtLanche" />
 
         <EditText
+            android:textColor="@drawable/edit_text_selector"
             android:id="@+id/edtAlmoco"
             android:layout_width="210dp"
             android:layout_height="40dp"
@@ -209,13 +210,12 @@
             android:inputType="textPersonName"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/txtAlmoco"
-            app:layout_constraintEnd_toEndOf="@+id/edtLanche1"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/edtLanche1"
             app:layout_constraintTop_toTopOf="@+id/txtAlmoco"
             app:layout_constraintVertical_bias="0.545" />
 
         <EditText
+            android:textColor="@drawable/edit_text_selector"
             android:id="@+id/edtLanche2"
             android:layout_width="210dp"
             android:layout_height="40dp"
@@ -228,6 +228,7 @@
             app:layout_constraintTop_toTopOf="@+id/txtLanche2" />
 
         <EditText
+            android:textColor="@drawable/edit_text_selector"
             android:id="@+id/edtJantar"
             android:layout_width="210dp"
             android:layout_height="40dp"
@@ -292,7 +293,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAtividadeEspecializada" />
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadeEspecializadav" />
 
         <EditText
             android:id="@+id/edtObservacoes"
@@ -313,15 +314,14 @@
 
         <Spinner
 
-            android:id="@+id/spinner_lanche1"
+            android:id="@+id/spinner_lanche"
             android:layout_width="95dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="@+id/edtLanche1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.153"
             app:layout_constraintStart_toEndOf="@+id/edtLanche1"
-            app:layout_constraintTop_toTopOf="@+id/edtLanche1" />
+            app:layout_constraintTop_toTopOf="@+id/edtLanche1"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Spinner
 
@@ -329,7 +329,7 @@
             android:layout_width="95dp"
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="@+id/edtAlmoco"
-            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche"
             app:layout_constraintStart_toEndOf="@+id/edtLanche1"
             app:layout_constraintTop_toTopOf="@+id/edtAlmoco" />
 
@@ -339,18 +339,18 @@
             android:layout_width="95dp"
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="@+id/edtLanche2"
-            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1"
-            app:layout_constraintStart_toEndOf="@+id/edtLanche1"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_almoco"
+            app:layout_constraintStart_toStartOf="@+id/spinner_almoco"
             app:layout_constraintTop_toTopOf="@+id/edtLanche2" />
 
         <Spinner
 
-            android:id="@+id/spinner_jantar"
+            android:id="@+id/spinner_jantarv"
             android:layout_width="95dp"
             android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="@+id/edtJantar"
-            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1"
-            app:layout_constraintStart_toEndOf="@+id/edtLanche1"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche2"
+            app:layout_constraintStart_toStartOf="@+id/spinner_lanche2"
             app:layout_constraintTop_toTopOf="@+id/edtJantar" />
 
         <Spinner
@@ -379,7 +379,7 @@
             android:layout_height="40dp"
 
             app:layout_constraintBottom_toBottomOf="@+id/spinner_sono_turnos"
-            app:layout_constraintEnd_toEndOf="@+id/spinner_jantar" />
+            app:layout_constraintEnd_toEndOf="@+id/spinner_jantarv" />
 
         <Spinner
 
@@ -446,7 +446,7 @@
             app:layout_constraintTop_toTopOf="@+id/edtHoraFebre" />
 
         <RadioGroup
-            android:id="@+id/rgFebre"
+            android:id="@+id/rgFebrev"
             android:layout_width="195dp"
             android:layout_height="35dp"
             android:orientation="horizontal"
@@ -454,19 +454,22 @@
             app:layout_constraintStart_toStartOf="@+id/edtMedicacao"
             app:layout_constraintTop_toTopOf="@+id/txtFebre">
 
-                <RadioButton
-                    android:id="@+id/rbFebreSim"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sim" />
 
-                <RadioButton
-                    android:id="@+id/rbFebreNao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Não" />
+
+                        <RadioButton
+                            android:id="@+id/rbFebreSimv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sim" />
+
+                        <RadioButton
+                            android:id="@+id/rbFebreNaov"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Não" />
+
         </RadioGroup>
 
         <Button

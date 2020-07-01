@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.text.TextUtils;
 
 import android.view.View;
@@ -23,7 +24,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Login extends AppCompatActivity {
 
@@ -31,10 +36,15 @@ public class Login extends AppCompatActivity {
     private EditText emailTV, passwordTV;
     private Button loginBtn;
     private FirebaseAuth mAuth;
+
     private FirebaseUser currentUser;
     private DatabaseReference reference;
     private FirebaseAuth firebaseAuth;
-    
+    public static Boolean ealuno;
+    public static Boolean eprofessor;
+    public static Boolean eadm;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +52,8 @@ public class Login extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        initializeUI();
 
+        initializeUI();
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,16 +98,50 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
 
+
                             reference = FirebaseDatabase.getInstance().getReference();
                             String email = mAuth.getCurrentUser().getEmail();
 
+
+
+
+                            reference.child("alunos").orderByChild("emailAluno").equalTo(email).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
+                                        ealuno=true;
+                                      abrirAluno();
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    Toast.makeText(getApplicationContext(), "Nao rolou o search", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                            reference.child("administradores").orderByChild("emailAdministrador").equalTo(email).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
+
+                                        abrirAdministrador();
+
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    Toast.makeText(getApplicationContext(), "Nao rolou o search", Toast.LENGTH_LONG).show();
+                                }
+                            });
 
                             reference.child("professores").orderByChild("emailProfessora").equalTo(email).addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
 
-                                        abrirEditar();
+                                        abrirProfessor();
 
                                     }
                                 }
@@ -107,24 +151,6 @@ public class Login extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Nao rolou o search", Toast.LENGTH_LONG).show();
                                 }
                             });
-
-                            reference.child("alunos").orderByChild("emailAluno").equalTo(email).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
-
-                                      abrirTelaInicial();
-
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-                                    Toast.makeText(getApplicationContext(), "Nao rolou o search", Toast.LENGTH_LONG).show();
-                                }
-                            });
-
-
 
 
                         } else {
@@ -135,29 +161,41 @@ public class Login extends AppCompatActivity {
                 });
     }
 
-    private void abrirTelaInicial() {
+    private void abrirAdministrador() {
         Intent intent = new Intent(Login.this, MenuDiretoria.class);
         startActivity(intent);
         finish();
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-       currentUser = mAuth.getCurrentUser();
-       firebaseAuth = firebaseAuth.getInstance();
-
-       if(currentUser!= null) {
-           abrirTelaInicial();
-       }
-
+    private void abrirAluno() {
+        Intent intent = new Intent(Login.this, TelaInicialAluno.class);
+        startActivity(intent);
+        finish();
+    }
+    private void abrirProfessor() {
+        Intent intent = new Intent(Login.this, TelaInicialProfessor.class);
+        startActivity(intent);
 
     }
-    public void abrirEditar(){
-        Intent intent = new Intent(Login.this, Editar.class);
+    private void abrirTelaInicial() {
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
     }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        currentUser = mAuth.getCurrentUser();
+        firebaseAuth = firebaseAuth.getInstance();
+
+
+        if (currentUser != null) {
+
+
+        } else {
+            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+
+        }
+    }
 }

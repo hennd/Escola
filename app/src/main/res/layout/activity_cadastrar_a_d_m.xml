@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarADM">
+
+    <TextView
+        android:id="@+id/txtDadosAdm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Dados do Administrador"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCadastrarAdministrador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Cadastrar Administrador"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaAdm" />
+
+    <Button
+        android:id="@+id/btnVoltarTelaAdministrador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Voltar"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarAdministrador" />
+
+    <EditText
+        android:id="@+id/edtNomeAdm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="Nome Administrador"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/txtDadosAdm" />
+
+    <EditText
+        android:id="@+id/edtEmailAdm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Email Administrador"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeAdm" />
+
+    <EditText
+        android:id="@+id/edtSenhaAdm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="SenhaAdministrador"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailAdm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

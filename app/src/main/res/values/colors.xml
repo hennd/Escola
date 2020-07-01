@@ -9,5 +9,6 @@
     <color name="appBranco">#FBFFF8</color>
     <color name="appRoxo">#BF5CA0</color>
     <color name="fundocinza">#e6e6e6</color>
-    #e6f2ff
+    <color name="enabled_color">#F7FE2E</color>
+    <color name="disabled_color">#000000</color>
 </resources>

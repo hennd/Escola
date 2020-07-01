@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MostrarRotina">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MostrarRotina">
+
+    <TextView
+        android:id="@+id/txtRotinaDoAlunov"
+        android:layout_width="177dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Rotina do Aluno"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtObservacoesv"
+
+        android:layout_width="271dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:gravity="left"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtObservacoesv" />
+
+    <TextView
+        android:id="@+id/txtAtividadeEspecializadav"
+
+        android:layout_width="299dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Atividade Especializada"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAtividadedoDiaTardev" />
+
+    <TextView
+        android:id="@+id/txtObservacoesv"
+
+        android:layout_width="299dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Atividade Especializada"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAtividadeEspecializadav" />
+
+    <TextView
+        android:id="@+id/txtAtividadedoDiaManhav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Manhã"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtividadeDoDiav" />
+
+    <TextView
+        android:id="@+id/txtAtividadedoDiaTardev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Tarde"
+        app:layout_constraintEnd_toEndOf="@+id/txtAtividadedoDiaManhav"
+        app:layout_constraintStart_toStartOf="@+id/txtAtividadedoDiaManhav"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtividadedoDiaManhav" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtAtividadedoDiaManhav"
+        android:layout_width="262dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAtividadedoDiaManhav"
+        app:layout_constraintStart_toEndOf="@+id/txtAtividadedoDiaManhav"
+        app:layout_constraintTop_toTopOf="@+id/txtAtividadedoDiaManhav" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtAtividadedoDiaTardev"
+        android:layout_width="262dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAtividadedoDiaTardev"
+        app:layout_constraintEnd_toEndOf="@+id/edtAtividadedoDiaManhav"
+        app:layout_constraintStart_toEndOf="@+id/txtAtividadedoDiaTardev"
+        app:layout_constraintTop_toTopOf="@+id/txtAtividadedoDiaTardev" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtAtividadeEspecializadav"
+        android:layout_width="262dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtividadeEspecializadav" />
+
+    <TextView
+
+        android:id="@+id/txtAtividadeDoDiav"
+        android:layout_width="245dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Atividades do dia"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFebrev" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtMedicacaov"
+        android:layout_width="195dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:hint="Medicação"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtFebrev"
+        app:layout_constraintStart_toEndOf="@+id/txtFebrev"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_febre_tempv" />
+
+    <TextView
+        android:id="@+id/txtFebrev"
+        android:layout_width="115dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/titulo_redondo"
+        android:gravity="center"
+        android:text="Febre"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEvacuacaov" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_evacuacaov"
+        android:layout_width="196dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEvacuacaov"
+        app:layout_constraintStart_toEndOf="@+id/txtEvacuacaov"
+        app:layout_constraintTop_toTopOf="@+id/txtEvacuacaov" />
+
+    <TextView
+        android:id="@+id/txtEvacuacaov"
+        android:layout_width="159dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Evacuação"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSonov" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_sono_turnosv"
+        android:layout_width="178dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSonov"
+        app:layout_constraintStart_toEndOf="@+id/txtSonov"
+        app:layout_constraintTop_toTopOf="@+id/txtSonov" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_tempo_sonov"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_sono_turnosv"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_jantarv" />
+
+    <TextView
+        android:id="@+id/txtSonov"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Sono"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLegendav" />
+
+    <TextView
+        android:id="@+id/txtLegendav"
+        android:layout_width="339dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="24dp"
+        android:text="Legenda:       B = BEM      MM = MENOS DA METADE      M = METADE      NA= NAO ACEITOU"
+        android:textSize="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtJantarv" />
+
+    <TextView
+        android:id="@+id/txtRefeicoesv"
+        android:layout_width="196dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Refeições"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRotinaDoAlunov" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_lanche2v"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edtLanche2v"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_almocov"
+        app:layout_constraintTop_toTopOf="@+id/edtLanche2v" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_jantarv"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edtJantarv"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_lanche2v" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_almocov"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edtAlmocov"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1v"
+        app:layout_constraintTop_toTopOf="@+id/edtAlmocov" />
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_lanche1v"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edtLanche1v"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_evacuacaov"
+        app:layout_constraintTop_toTopOf="@+id/edtLanche1v" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtLanche2v"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtLanche2v"
+        app:layout_constraintEnd_toEndOf="@+id/edtAlmocov"
+        app:layout_constraintStart_toStartOf="@+id/edtAlmocov"
+        app:layout_constraintTop_toTopOf="@+id/txtLanche2v" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtAlmocov"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAlmocov"
+        app:layout_constraintEnd_toEndOf="@+id/edtLanche1v"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtLanche1v"
+        app:layout_constraintTop_toTopOf="@+id/txtAlmocov"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtJantarv"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtJantarv"
+        app:layout_constraintEnd_toEndOf="@+id/edtLanche2v"
+        app:layout_constraintStart_toStartOf="@+id/edtLanche2v"
+        app:layout_constraintTop_toTopOf="@+id/txtJantarv" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtLanche1v"
+        android:layout_width="210dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="6dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtLanche1v"
+        app:layout_constraintStart_toEndOf="@+id/txtLanche1v"
+        app:layout_constraintTop_toTopOf="@+id/txtLanche1v"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtDataRotinav"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtRotinaDoAlunov"
+        app:layout_constraintStart_toEndOf="@+id/txtRotinaDoAlunov"
+        app:layout_constraintTop_toTopOf="@+id/txtRotinaDoAlunov" />
+
+    <TextView
+        android:id="@+id/txtLanche2v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Lanche 2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlmocov" />
+
+    <TextView
+        android:id="@+id/txtLanche1v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Lanche 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRefeicoesv" />
+
+    <TextView
+        android:id="@+id/txtAlmocov"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Almoço"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLanche1v" />
+
+    <TextView
+        android:id="@+id/txtJantarv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Jantar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLanche2v" />
+
+    <RadioGroup
+        android:id="@+id/rgFebrev"
+        android:layout_width="195dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/edtMedicacaov"
+        app:layout_constraintStart_toStartOf="@+id/edtMedicacaov"
+        app:layout_constraintTop_toTopOf="@+id/txtFebrev">
+
+
+        <RadioButton
+            android:id="@+id/rbFebreNaov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Não"
+            tools:layout_editor_absoluteX="263dp"
+            tools:layout_editor_absoluteY="576dp" />
+
+        <RadioButton
+            android:id="@+id/rbFebreSimv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sim"
+            tools:layout_editor_absoluteX="166dp"
+            tools:layout_editor_absoluteY="576dp" />
+    </RadioGroup>
+
+    <Spinner
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/spinner_febre_tempv"
+        android:layout_width="107dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/txtFebrev"
+        app:layout_constraintStart_toStartOf="@+id/rgFebrev"
+        app:layout_constraintTop_toTopOf="@+id/txtFebrev" />
+
+    <EditText
+        android:textColor="@drawable/edit_text_selector"
+        android:id="@+id/edtHoraFebrev"
+        android:layout_width="61dp"
+        android:layout_height="40dp"
+        android:background="@drawable/redondo"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_febre_tempv"
+        app:layout_constraintEnd_toEndOf="@+id/rgFebrev"
+        app:layout_constraintTop_toTopOf="@+id/spinner_febre_tempv" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -10,6 +10,15 @@ public class Professor {
     private String emailProfessora;
     private String senhaProfessora;
     private String keyUser;
+    private String keyTurma;
+
+    public String getKeyTurma() {
+        return keyTurma;
+    }
+
+    public void setKeyTurma(String keyTurma) {
+        this.keyTurma = keyTurma;
+    }
 
     public Integer getCargoSpinnerProfessora() {
         return cargoSpinnerProfessora;
@@ -59,7 +68,6 @@ public class Professor {
         this.emailProfessora = emailProfessora;
     }
 
-    @Exclude
     public String getSenhaProfessora() {
         return senhaProfessora;
     }

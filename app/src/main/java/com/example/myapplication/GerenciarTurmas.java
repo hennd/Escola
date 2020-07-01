@@ -59,7 +59,8 @@ public class GerenciarTurmas extends AppCompatActivity {
     Spinner spinnerExcluirProfessorTurma;
     Spinner spinnerAdicionarProfessorTurma;
     Button btnExcluirAluno;
-
+    String keyTurmaSelecionado;
+    String keyTurmaAlunoSelecionado;
 
     Button btnAdicionarProfessorTurma;
     Button btnExcluirProfessorTurma;
@@ -269,7 +270,7 @@ public class GerenciarTurmas extends AppCompatActivity {
                     Turma turma = turmasSnapShot.getValue(Turma.class);
 
                     alunosTurmaAdicionar = turma.getAlunosTurma();
-
+                    keyTurmaAlunoSelecionado = turma.getKeyUserTurma();
                     turmaAlunoAdicionado.setKeyUserTurma(turma.getKeyUserTurma());
                     turmaAlunoAdicionado.setNomeTurma(turma.getNomeTurma());
                     turmaAlunoAdicionado.setProfessores(turma.getProfessores());
@@ -284,6 +285,37 @@ public class GerenciarTurmas extends AppCompatActivity {
 
                 reference.child(turmaAlunoAdicionado.getKeyUserTurma()).setValue(turmaAlunoAdicionado);
                 Toast.makeText(GerenciarTurmas.this, "Aluno Adicionado", Toast.LENGTH_LONG).show();
+
+                String nomeAlunoAddKey= listaAlunosAdicionarTurma.getSelectedItem().toString();
+
+                final DatabaseReference referenciaProfessora = FirebaseDatabase.getInstance().getReference("alunos");
+                referenciaProfessora.orderByChild("nomeAluno").equalTo(nomeAlunoAddKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Aluno alunocomturma = new Aluno();
+                        for (DataSnapshot profSnap : dataSnapshot.getChildren()) {
+                            Aluno aluno = profSnap.getValue(Aluno.class);
+
+                            alunocomturma.setKeyUser(aluno.getKeyUser());
+                            alunocomturma.setNomeAluno(aluno.getNomeAluno());
+                            alunocomturma.setEmailAluno(aluno.getEmailAluno());
+                            alunocomturma.setPassword(aluno.getPassword());
+                            alunocomturma.setNomeMaeAluno(aluno.getNomeMaeAluno());
+                            alunocomturma.setNomePaiAluno(aluno.getNomePaiAluno());
+                            alunocomturma.setTelefoneAluno(aluno.getTelefoneAluno());
+                            alunocomturma.setKeyTurma(keyTurmaAlunoSelecionado);
+
+                            referenciaProfessora.child(aluno.getKeyUser()).setValue(alunocomturma);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
                 recreate();
             }
 
@@ -294,6 +326,7 @@ public class GerenciarTurmas extends AppCompatActivity {
         });
     }
     public void adicionarProfessoraTurma() {
+
         reference = FirebaseDatabase.getInstance().getReference("Turmas");
         reference.orderByChild("nomeTurma").equalTo(turmaSelecionada.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -304,7 +337,7 @@ public class GerenciarTurmas extends AppCompatActivity {
 
                     professoreasAdicionar = turma.getProfessores();
 
-
+                    keyTurmaSelecionado = turma.getKeyUserTurma();
                     turmaProfessorAdicionado.setKeyUserTurma(turma.getKeyUserTurma());
                     turmaProfessorAdicionado.setNomeTurma(turma.getNomeTurma());
                     turmaProfessorAdicionado.setAlunosTurma(turma.getAlunosTurma());
@@ -313,13 +346,45 @@ public class GerenciarTurmas extends AppCompatActivity {
 
 
                 professoreasAdicionar.add(spinnerAdicionarProfessorTurma.getSelectedItem().toString());
+
                 reference = FirebaseDatabase.getInstance().getReference("Turmas");
 
                 turmaProfessorAdicionado.setProfessores(professoreasAdicionar);
 
                 reference.child(turmaProfessorAdicionado.getKeyUserTurma()).setValue(turmaProfessorAdicionado);
                 Toast.makeText(GerenciarTurmas.this, "Professora Adicionada", Toast.LENGTH_LONG).show();
-                recreate();
+
+
+                String nomeProfessoraAddKey= spinnerAdicionarProfessorTurma.getSelectedItem().toString();
+
+                final DatabaseReference referenciaProfessora = FirebaseDatabase.getInstance().getReference("professores");
+                referenciaProfessora.orderByChild("nomeProfessora").equalTo(nomeProfessoraAddKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Professor professoracomTurma = new Professor();
+                        for (DataSnapshot profSnap : dataSnapshot.getChildren()) {
+                            Professor professor = profSnap.getValue(Professor.class);
+
+                            professoracomTurma.setCargoProfessora(professor.getCargoProfessora());
+                            professoracomTurma.setNomeProfessora(professor.getNomeProfessora());
+                            professoracomTurma.setCargoSpinnerProfessora(professor.getCargoSpinnerProfessora());
+                            professoracomTurma.setSenhaProfessora(professor.getSenhaProfessora());
+                            professoracomTurma.setTelefoneProfessora(professor.getTelefoneProfessora());
+                            professoracomTurma.setKeyUser(professor.getKeyUser());
+                            professoracomTurma.setEmailProfessora(professor.getEmailProfessora());
+                            professoracomTurma.setKeyTurma(keyTurmaSelecionado);
+
+                            referenciaProfessora.child(professor.getKeyUser()).setValue(professoracomTurma);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
 
             @Override

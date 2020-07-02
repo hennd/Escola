@@ -33,8 +33,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Calendar;
 
 public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, AdapterView.OnItemSelectedListener {
-    Button btnFebrehora;
 
+    Button btnFebrehora;
     Button btnSalvar;
     EditText edtLanche1;
     EditText edtAlmoco;

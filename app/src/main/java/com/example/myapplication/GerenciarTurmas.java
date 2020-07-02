@@ -37,7 +37,7 @@ public class GerenciarTurmas extends AppCompatActivity {
     DatabaseReference reference;
     List<String> listTurmas;
     List<String> listProfessores;
-    List<String>professoresExcluir;
+    List<String> professoresExcluir;
     List<String> alunosTurmaExcluir;
     Spinner listaAlunosAdicionarTurma;
     ListView listaAlunosTurma;
@@ -47,9 +47,9 @@ public class GerenciarTurmas extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapterAlunosExcluir;
     ArrayAdapter<String> arrayAdapterProfessorExcluir;
     List<String> alunosTurmaAdicionar;
-    List<String>professoreasAdicionar;
+    List<String> professoreasAdicionar;
     List<String> listadeAlunosExcluir;
-    List<String>listaProfessoresExcluir;
+    List<String> listaProfessoresExcluir;
     Turma turmaAlunoAdicionado = new Turma();
     Turma turmaAlunoRemovido = new Turma();
     Turma turmaProfessorAdicionado = new Turma();
@@ -61,10 +61,15 @@ public class GerenciarTurmas extends AppCompatActivity {
     Button btnExcluirAluno;
     String keyTurmaSelecionado;
     String keyTurmaAlunoSelecionado;
-
+    public static String alunoexcluirturmaantiga;
+    public static String turmadoAlunoantiga;
+    public static String professorexcluirturmaantiga;
+    public static String turmaProfessorantiga;
     Button btnAdicionarProfessorTurma;
     Button btnExcluirProfessorTurma;
     Button btnVoltar;
+    public String keyParaExcluir;
+    public String keyParaExcluirProfessor;
 
 
     @Override
@@ -75,7 +80,11 @@ public class GerenciarTurmas extends AppCompatActivity {
         View footer = getLayoutInflater().inflate(R.layout.footer, null);
 
 
-        btnVoltar= (Button)findViewById(R.id.btnVoltar);
+        listarTurmas();
+        listarAlunosAdicionar();
+        listarProfessores();
+
+        btnVoltar = (Button) findViewById(R.id.btnVoltar);
         txtTitulo = (TextView) findViewById(R.id.txtVisualizarTurmas);
         turmaSelecionada = findViewById(R.id.spinner_gerenciar_turmas);
         listaAlunosTurma = (ListView) findViewById(R.id.lvAlunosTurmaSelecionada);
@@ -83,18 +92,16 @@ public class GerenciarTurmas extends AppCompatActivity {
         btnAdicionarAlunoTurma = (Button) findViewById(R.id.btnAdcionarAlunoTurma);
         spinnerExcluirAlunoTurma = (Spinner) findViewById(R.id.spinner_alunos_para_excluir_turma);
         btnExcluirAluno = (Button) findViewById(R.id.btnExcluirAlunoTurma);
-        listaProfessoresTurma= (ListView)findViewById(R.id.lvProfessoresTurmaSelecionada);
-        spinnerExcluirProfessorTurma=(Spinner)findViewById(R.id.spinner_professores_para_excluir_turma);
-        spinnerAdicionarProfessorTurma=(Spinner)findViewById(R.id.spinner_todos_professores_gerenciar_turma);
-        btnAdicionarProfessorTurma=(Button)findViewById(R.id.btnAdcionarProfessorTurma);
-        btnExcluirProfessorTurma=(Button)findViewById(R.id.btnExcluirProfessora);
+        listaProfessoresTurma = (ListView) findViewById(R.id.lvProfessoresTurmaSelecionada);
+        spinnerExcluirProfessorTurma = (Spinner) findViewById(R.id.spinner_professores_para_excluir_turma);
+        spinnerAdicionarProfessorTurma = (Spinner) findViewById(R.id.spinner_todos_professores_gerenciar_turma);
+        btnAdicionarProfessorTurma = (Button) findViewById(R.id.btnAdcionarProfessorTurma);
+        btnExcluirProfessorTurma = (Button) findViewById(R.id.btnExcluirProfessora);
 
-        listarTurmas();
-        listarAlunosAdicionar();
-        listarProfessores();
 
         listaAlunosTurma.addHeaderView(header);
         listaProfessoresTurma.addFooterView(footer);
+
         turmaSelecionada.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -109,7 +116,7 @@ public class GerenciarTurmas extends AppCompatActivity {
                             alunosTurmaExcluir = turma.getAlunosTurma();
 
                             listProfessores = turma.getProfessores();
-                            professoresExcluir=turma.getProfessores();
+                            professoresExcluir = turma.getProfessores();
                         }
 
                         arrayAdapterTurma = new ArrayAdapter<String>(GerenciarTurmas.this,
@@ -184,8 +191,10 @@ public class GerenciarTurmas extends AppCompatActivity {
             final List<String> turmas = new ArrayList<String>();
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                turmas.clear();
                 for (DataSnapshot item : dataSnapshot.getChildren()) {
                     Turma t = item.getValue(Turma.class);
+
                     turmas.add(t.getNomeTurma());
 
                 }
@@ -213,6 +222,7 @@ public class GerenciarTurmas extends AppCompatActivity {
             final List<String> alunos = new ArrayList<String>();
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                alunos.clear();
                 for (DataSnapshot item : dataSnapshot.getChildren()) {
                     Aluno a = item.getValue(Aluno.class);
                     alunos.add(a.getNomeAluno());
@@ -233,14 +243,17 @@ public class GerenciarTurmas extends AppCompatActivity {
             }
         });
     }
+
     public void listarProfessores() {
 
         reference = FirebaseDatabase.getInstance().getReference("professores");
         reference.addValueEventListener(new ValueEventListener() {
 
+
             final List<String> professores = new ArrayList<String>();
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                professores.clear();
                 for (DataSnapshot item : dataSnapshot.getChildren()) {
                     Professor p = item.getValue(Professor.class);
                     professores.add(p.getNomeProfessora());
@@ -262,12 +275,36 @@ public class GerenciarTurmas extends AppCompatActivity {
     }
 
     public void adicionarAlunoTurma() {
+
+        alunoexcluirturmaantiga = listaAlunosAdicionarTurma.getSelectedItem().toString();
+
+        final DatabaseReference referenciaProfessora = FirebaseDatabase.getInstance().getReference("alunos");
+        referenciaProfessora.orderByChild("nomeAluno").equalTo(listaAlunosAdicionarTurma.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot profSnap : dataSnapshot.getChildren()) {
+                    Aluno aluno4 = profSnap.getValue(Aluno.class);
+
+                    turmadoAlunoantiga = aluno4.getKeyTurma();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
         reference = FirebaseDatabase.getInstance().getReference("Turmas");
         reference.orderByChild("nomeTurma").equalTo(turmaSelecionada.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot turmasSnapShot : dataSnapshot.getChildren()) {
                     Turma turma = turmasSnapShot.getValue(Turma.class);
+
 
                     alunosTurmaAdicionar = turma.getAlunosTurma();
                     keyTurmaAlunoSelecionado = turma.getKeyUserTurma();
@@ -286,7 +323,7 @@ public class GerenciarTurmas extends AppCompatActivity {
                 reference.child(turmaAlunoAdicionado.getKeyUserTurma()).setValue(turmaAlunoAdicionado);
                 Toast.makeText(GerenciarTurmas.this, "Aluno Adicionado", Toast.LENGTH_LONG).show();
 
-                String nomeAlunoAddKey= listaAlunosAdicionarTurma.getSelectedItem().toString();
+                final String nomeAlunoAddKey = listaAlunosAdicionarTurma.getSelectedItem().toString();
 
                 final DatabaseReference referenciaProfessora = FirebaseDatabase.getInstance().getReference("alunos");
                 referenciaProfessora.orderByChild("nomeAluno").equalTo(nomeAlunoAddKey).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -295,6 +332,7 @@ public class GerenciarTurmas extends AppCompatActivity {
                         Aluno alunocomturma = new Aluno();
                         for (DataSnapshot profSnap : dataSnapshot.getChildren()) {
                             Aluno aluno = profSnap.getValue(Aluno.class);
+
 
                             alunocomturma.setKeyUser(aluno.getKeyUser());
                             alunocomturma.setNomeAluno(aluno.getNomeAluno());
@@ -306,7 +344,6 @@ public class GerenciarTurmas extends AppCompatActivity {
                             alunocomturma.setKeyTurma(keyTurmaAlunoSelecionado);
 
                             referenciaProfessora.child(aluno.getKeyUser()).setValue(alunocomturma);
-
                         }
                     }
 
@@ -315,7 +352,7 @@ public class GerenciarTurmas extends AppCompatActivity {
 
                     }
                 });
-
+                excluirAlunosDaTurmaAntiga(turmadoAlunoantiga, alunoexcluirturmaantiga);
                 recreate();
             }
 
@@ -324,8 +361,32 @@ public class GerenciarTurmas extends AppCompatActivity {
 
             }
         });
+
+
     }
+
     public void adicionarProfessoraTurma() {
+
+        professorexcluirturmaantiga = spinnerAdicionarProfessorTurma.getSelectedItem().toString();
+
+        final DatabaseReference referenciaProfessora = FirebaseDatabase.getInstance().getReference("professores");
+        referenciaProfessora.orderByChild("nomeProfessora").equalTo(spinnerAdicionarProfessorTurma.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot profSnap2 : dataSnapshot.getChildren()) {
+                    Professor professor4 = profSnap2.getValue(Professor.class);
+
+                    turmaProfessorantiga = professor4.getKeyTurma();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         reference = FirebaseDatabase.getInstance().getReference("Turmas");
         reference.orderByChild("nomeTurma").equalTo(turmaSelecionada.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -355,7 +416,7 @@ public class GerenciarTurmas extends AppCompatActivity {
                 Toast.makeText(GerenciarTurmas.this, "Professora Adicionada", Toast.LENGTH_LONG).show();
 
 
-                String nomeProfessoraAddKey= spinnerAdicionarProfessorTurma.getSelectedItem().toString();
+                String nomeProfessoraAddKey = spinnerAdicionarProfessorTurma.getSelectedItem().toString();
 
                 final DatabaseReference referenciaProfessora = FirebaseDatabase.getInstance().getReference("professores");
                 referenciaProfessora.orderByChild("nomeProfessora").equalTo(nomeProfessoraAddKey).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -385,6 +446,10 @@ public class GerenciarTurmas extends AppCompatActivity {
                     }
                 });
 
+                excluirProfessoresTurmaAntiga(turmaProfessorantiga, professorexcluirturmaantiga);
+
+                recreate();
+
             }
 
             @Override
@@ -404,6 +469,7 @@ public class GerenciarTurmas extends AppCompatActivity {
                 for (DataSnapshot turmasSnapShot : dataSnapshot.getChildren()) {
                     Turma turma = turmasSnapShot.getValue(Turma.class);
 
+
                     listadeAlunosExcluir = turma.getAlunosTurma();
 
                     listadeAlunosExcluir.remove(spinnerExcluirAlunoTurma.getSelectedItem().toString());
@@ -421,8 +487,27 @@ public class GerenciarTurmas extends AppCompatActivity {
 
                 reference.child(turmaAlunoRemovido.getKeyUserTurma()).setValue(turmaAlunoRemovido);
                 Toast.makeText(GerenciarTurmas.this, "Aluno Removido", Toast.LENGTH_LONG).show();
-                recreate();
 
+                final DatabaseReference referenciaAluno = FirebaseDatabase.getInstance().getReference("alunos");
+                referenciaAluno.orderByChild("nomeAluno").equalTo(spinnerExcluirAlunoTurma.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot profSnap : dataSnapshot.getChildren()) {
+                            Aluno alunoexcluir = profSnap.getValue(Aluno.class);
+
+                            profSnap.getRef().child("keyTurma").setValue("semTurma");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+                recreate();
 
 
             }
@@ -437,6 +522,7 @@ public class GerenciarTurmas extends AppCompatActivity {
 
 
     }
+
     public void excluirProfessoresTurma(View View) {
 
         reference = FirebaseDatabase.getInstance().getReference("Turmas");
@@ -463,9 +549,116 @@ public class GerenciarTurmas extends AppCompatActivity {
                 turmaProfessorRemovido.setProfessores(listaProfessoresExcluir);
 
                 reference.child(turmaProfessorRemovido.getKeyUserTurma()).setValue(turmaProfessorRemovido);
+
                 Toast.makeText(GerenciarTurmas.this, "Professor Removido", Toast.LENGTH_LONG).show();
+
+                final DatabaseReference referenciaProfessor = FirebaseDatabase.getInstance().getReference("professores");
+                referenciaProfessor.orderByChild("nomeProfessora").equalTo(spinnerExcluirProfessorTurma.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot profSnappr : dataSnapshot.getChildren()) {
+                            Professor alunoexcluir = profSnappr.getValue(Professor.class);
+
+                            profSnappr.getRef().child("keyTurma").setValue("semTurma");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
                 recreate();
 
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+        });
+
+
+    }
+
+
+    public void excluirAlunosDaTurmaAntiga(String turmaKey, final String aluno) {
+
+
+        reference = FirebaseDatabase.getInstance().getReference("Turmas");
+        reference.orderByChild("keyUserTurma").equalTo(turmaKey).addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot turmasSnapShot : dataSnapshot.getChildren()) {
+                    Turma turma = turmasSnapShot.getValue(Turma.class);
+
+                    listadeAlunosExcluir = turma.getAlunosTurma();
+
+                    listadeAlunosExcluir.remove(aluno);
+
+                    keyParaExcluir = (turma.getKeyUserTurma());
+                    turmaAlunoRemovido.setKeyUserTurma(turma.getKeyUserTurma());
+                    turmaAlunoRemovido.setNomeTurma(turma.getNomeTurma());
+                    turmaAlunoRemovido.setProfessores(turma.getProfessores());
+
+                    reference = FirebaseDatabase.getInstance().getReference("Turmas");
+
+                    turmaAlunoRemovido.setAlunosTurma(listadeAlunosExcluir);
+
+                    reference.child(keyParaExcluir).setValue(turmaAlunoRemovido);
+
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+
+        });
+
+
+    }
+
+
+    public void excluirProfessoresTurmaAntiga(final String turmaKeyProfessor, final String professor) {
+
+        reference = FirebaseDatabase.getInstance().getReference("Turmas");
+        reference.orderByChild("keyUserTurma").equalTo(turmaKeyProfessor).addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot turmasSnapShot : dataSnapshot.getChildren()) {
+                    Turma turma = turmasSnapShot.getValue(Turma.class);
+
+                    listaProfessoresExcluir = turma.getProfessores();
+
+                    listaProfessoresExcluir.remove(professor);
+
+                    keyParaExcluirProfessor = (turma.getKeyUserTurma());
+
+                    turmaProfessorRemovido.setKeyUserTurma(turma.getKeyUserTurma());
+                    turmaProfessorRemovido.setNomeTurma(turma.getNomeTurma());
+                    turmaProfessorRemovido.setAlunosTurma(turma.getAlunosTurma());
+
+                    reference = FirebaseDatabase.getInstance().getReference("Turmas");
+
+                    turmaProfessorRemovido.setProfessores(listaProfessoresExcluir);
+
+                    reference.child(keyParaExcluirProfessor).setValue(turmaProfessorRemovido);
+
+
+                }
 
 
             }

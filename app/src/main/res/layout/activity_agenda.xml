@@ -187,6 +187,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtLanche2" />
 
         <EditText
+
             android:textColor="@drawable/edit_text_selector"
             android:id="@+id/edtLanche1"
             android:layout_width="210dp"

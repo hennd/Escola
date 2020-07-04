@@ -261,9 +261,6 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
     }
     public void salvarAgenda(){
 
-
-
-
         String temfebre="talvez", data;
         String edtlanche1, edtalmoco, edtlanche2, edtjantar, rgfebre, rbfebreSim,rbfebreNao,medicacaofebre,temperatura,sono;
         String atividadediamanha,atividadediatarde,atividadeespecializada,edobservacoes,edtfebrehora;

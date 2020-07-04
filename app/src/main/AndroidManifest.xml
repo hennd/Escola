@@ -11,18 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InserirCardapio">
+        <activity android:name=".TelaDiretoriaGerenciarRotinas">
 
         </activity>
+        <activity android:name=".GerenciarRotinas">
+
+        </activity>
+        <activity android:name=".InserirCardapio" />
         <activity android:name=".MostrarRotinaAluno" />
         <activity android:name=".MostrarRotina" />
-        <activity android:name=".TelaInicialProfessor">
-
-        </activity>
-
-        <activity android:name=".TelaInicialAluno">
-
-        </activity>
+        <activity android:name=".TelaInicialProfessor" />
+        <activity android:name=".TelaInicialAluno" />
         <activity android:name=".CadastrarADM" />
         <activity android:name=".MenuProfessor" />
         <activity android:name=".MenuAluno" />
@@ -31,22 +30,23 @@
         <activity android:name=".UpdateProfessora" />
         <activity android:name=".TelaProfessorDiretoria" />
         <activity android:name=".UpdateAluno" />
-        <activity android:name=".CadastrarProfessor" />
+        <activity android:name=".CadastrarProfessor" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".TelaAlunoDiretoria" />
         <activity android:name=".MenuDiretoria" />
-        <activity android:name=".Login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Login">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>/>
         </activity>
         <activity android:name=".Editar" />
-        <activity android:name=".CadastrarAluno" />
-        <activity android:name=".Agenda">
+        <activity android:name=".CadastrarAluno" >
 
-
-    </activity>
+        </activity>
+        <activity android:name=".Agenda" />
         <activity android:name=".Dash" />
         <activity android:name=".MainActivity" />
     </application>

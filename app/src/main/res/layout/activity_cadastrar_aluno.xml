@@ -5,10 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CadastrarAluno">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
@@ -94,25 +92,44 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
-        android:background="@drawable/titulo_redondo"
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/titulo_redondo"
         android:text="Cadastrar"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_todas_turmas_addalunos"
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/btnVoltarTelaAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/titulo_redondo"
         android:onClick="voltarTelaAlunos"
         android:text="Voltar"
         app:layout_constraintTop_toBottomOf="@+id/register"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner_todas_turmas_addalunos"
+        android:layout_width="333dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Adicionar na turma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

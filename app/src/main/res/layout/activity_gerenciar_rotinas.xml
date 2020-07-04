@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GerenciarRotinas">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GerenciarRotinas">
+
+        <Button
+            android:id="@+id/btnHoraFebre2"
+            android:layout_width="25dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/ic_iconfinder_access_time_326483"
+            app:layout_constraintBottom_toBottomOf="@+id/edtHoraFebrevag"
+            app:layout_constraintStart_toEndOf="@+id/edtHoraFebrevag"
+            app:layout_constraintTop_toTopOf="@+id/edtHoraFebrevag" />
+
+        <TextView
+            android:id="@+id/txtRotinaDoAlunovag"
+            android:layout_width="177dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Rotina do Aluno"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtObservacoesvag"
+
+            android:layout_width="271dp"
+            android:layout_height="205dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:gravity="left"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtObservacoesvag" />
+
+        <TextView
+            android:id="@+id/txtAtividadeEspecializadavag"
+
+            android:layout_width="299dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Atividade Especializada"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtAtividadedoDiaTardevag" />
+
+        <TextView
+            android:id="@+id/txtObservacoesvag"
+
+            android:layout_width="299dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Atividade Especializada"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtAtividadeEspecializadavag" />
+
+        <TextView
+            android:id="@+id/txtAtividadedoDiaManhavag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Manhã"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadeDoDiavag" />
+
+        <TextView
+            android:id="@+id/txtAtividadedoDiaTardevag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="Tarde"
+            app:layout_constraintEnd_toEndOf="@+id/txtAtividadedoDiaManhavag"
+            app:layout_constraintStart_toStartOf="@+id/txtAtividadedoDiaManhavag"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadedoDiaManhavag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtAtividadedoDiaManhavag"
+            android:layout_width="262dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAtividadedoDiaManhavag"
+            app:layout_constraintStart_toEndOf="@+id/txtAtividadedoDiaManhavag"
+            app:layout_constraintTop_toTopOf="@+id/txtAtividadedoDiaManhavag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtAtividadedoDiaTardevag"
+            android:layout_width="262dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAtividadedoDiaTardevag"
+            app:layout_constraintEnd_toEndOf="@+id/edtAtividadedoDiaManhavag"
+            app:layout_constraintStart_toEndOf="@+id/txtAtividadedoDiaTardevag"
+            app:layout_constraintTop_toTopOf="@+id/txtAtividadedoDiaTardevag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtAtividadeEspecializadavag"
+            android:layout_width="262dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAtividadeEspecializadavag" />
+
+        <TextView
+
+            android:id="@+id/txtAtividadeDoDiavag"
+            android:layout_width="245dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Atividades do dia"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFebrevag" />
+
+        <EditText
+            android:id="@+id/edtMedicacaovag"
+            android:layout_width="195dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:hint="Medicação"
+            android:inputType="textPersonName"
+            android:textColor="@drawable/edit_text_selector"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFebrevag"
+            app:layout_constraintStart_toEndOf="@+id/txtFebrevag"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_febre_tempvag" />
+
+        <TextView
+            android:id="@+id/txtFebrevag"
+            android:layout_width="115dp"
+            android:layout_height="138dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:gravity="center"
+            android:text="Febre"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEvacuacaovag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_evacuacaovag"
+            android:layout_width="196dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtEvacuacaovag"
+            app:layout_constraintStart_toEndOf="@+id/txtEvacuacaovag"
+            app:layout_constraintTop_toTopOf="@+id/txtEvacuacaovag" />
+
+        <TextView
+            android:id="@+id/txtEvacuacaovag"
+            android:layout_width="159dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Evacuação"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSonovag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_sono_turnosvag"
+            android:layout_width="178dp"
+            android:layout_height="40dp"
+
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtSonovag"
+            app:layout_constraintStart_toEndOf="@+id/txtSonovag"
+            app:layout_constraintTop_toTopOf="@+id/txtSonovag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_tempo_sonovag"
+            android:layout_width="105dp"
+            android:layout_height="40dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_sono_turnosvag"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_jantarvag" />
+
+        <TextView
+            android:id="@+id/txtSonovag"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Sono"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLegendavag" />
+
+        <TextView
+            android:id="@+id/txtLegendavag"
+            android:layout_width="339dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="24dp"
+            android:text="Legenda:       B = BEM      MM = MENOS DA METADE      M = METADE      NA= NAO ACEITOU"
+            android:textSize="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtJantarvag" />
+
+        <TextView
+            android:id="@+id/txtRefeicoesvag"
+            android:layout_width="196dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Refeições"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRotinaDoAlunovag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_lanche2vag"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtLanche2vag"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_almocovag"
+            app:layout_constraintTop_toTopOf="@+id/edtLanche2vag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_jantarvag"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtJantarvag"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche2vag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_almocovag"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtAlmocovag"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_lanche1vag"
+            app:layout_constraintTop_toTopOf="@+id/edtAlmocovag" />
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_lanche1vag"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edtLanche1vag"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_evacuacaovag"
+            app:layout_constraintTop_toTopOf="@+id/edtLanche1vag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtLanche2vag"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLanche2vag"
+            app:layout_constraintEnd_toEndOf="@+id/edtAlmocovag"
+            app:layout_constraintStart_toStartOf="@+id/edtAlmocovag"
+            app:layout_constraintTop_toTopOf="@+id/txtLanche2vag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtAlmocovag"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAlmocovag"
+            app:layout_constraintEnd_toEndOf="@+id/edtLanche1vag"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edtLanche1vag"
+            app:layout_constraintTop_toTopOf="@+id/txtAlmocovag"
+            app:layout_constraintVertical_bias="0.523" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtJantarvag"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtJantarvag"
+            app:layout_constraintEnd_toEndOf="@+id/edtLanche2vag"
+            app:layout_constraintStart_toStartOf="@+id/edtLanche2vag"
+            app:layout_constraintTop_toTopOf="@+id/txtJantarvag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtLanche1vag"
+            android:layout_width="210dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtLanche1vag"
+            app:layout_constraintStart_toEndOf="@+id/txtLanche1vag"
+            app:layout_constraintTop_toTopOf="@+id/txtLanche1vag"
+            app:layout_constraintVertical_bias="0.571" />
+
+        <EditText
+            android:id="@+id/edtDataRotinavag"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/redondo"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@drawable/edit_text_selector"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtRotinaDoAlunovag"
+            app:layout_constraintStart_toEndOf="@+id/txtRotinaDoAlunovag"
+            app:layout_constraintTop_toTopOf="@+id/txtRotinaDoAlunovag" />
+
+        <TextView
+            android:id="@+id/txtLanche2vag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Lanche 2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAlmocovag" />
+
+        <TextView
+            android:id="@+id/txtLanche1vag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Lanche 1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRefeicoesvag" />
+
+        <TextView
+            android:id="@+id/txtAlmocovag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Almoço"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLanche1vag" />
+
+        <TextView
+            android:id="@+id/txtJantarvag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Jantar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLanche2vag" />
+
+        <RadioGroup
+            android:id="@+id/rgFebrevag"
+            android:layout_width="195dp"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/edtMedicacaovag"
+            app:layout_constraintStart_toStartOf="@+id/edtMedicacaovag"
+            app:layout_constraintTop_toTopOf="@+id/txtFebrevag">
+
+
+            <RadioButton
+                android:id="@+id/rbFebreNaovag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Não"
+                tools:layout_editor_absoluteX="263dp"
+                tools:layout_editor_absoluteY="576dp" />
+
+            <RadioButton
+                android:id="@+id/rbFebreSimvag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sim"
+                tools:layout_editor_absoluteX="166dp"
+                tools:layout_editor_absoluteY="576dp" />
+        </RadioGroup>
+
+        <Spinner
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/spinner_febre_tempvag"
+            android:layout_width="107dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFebrevag"
+            app:layout_constraintStart_toStartOf="@+id/rgFebrevag"
+            app:layout_constraintTop_toTopOf="@+id/txtFebrevag" />
+
+        <EditText
+            android:textColor="@drawable/edit_text_selector"
+            android:id="@+id/edtHoraFebrevag"
+            android:layout_width="61dp"
+            android:layout_height="40dp"
+            android:background="@drawable/redondo"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_febre_tempvag"
+            app:layout_constraintEnd_toEndOf="@+id/rgFebrevag"
+            app:layout_constraintTop_toTopOf="@+id/spinner_febre_tempvag" />
+        <Button
+            android:id="@+id/btnSalvareditado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.343"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtObservacoesvag" />
+
+        <Button
+            android:id="@+id/btnBackeditado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="104dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Voltar"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSalvareditado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toEndOf="@+id/btnSalvareditado"
+            app:layout_constraintTop_toTopOf="@+id/btnSalvareditado"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

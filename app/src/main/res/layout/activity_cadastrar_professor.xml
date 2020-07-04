@@ -65,6 +65,18 @@
         android:hint="Senha Professora"
         android:inputType="textPersonName" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar na Turma"
+        android:textAlignment="center" />
+
+    <Spinner
+        android:id="@+id/spinner_todas_turmas_addprof"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
     <Button
         android:background="@drawable/titulo_redondo"
 

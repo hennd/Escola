@@ -27,6 +27,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class TelaInicialProfessor extends AppCompatActivity {
+
     Boolean passou=false;
     Button btnsairprofessor;
     Button dprotina;
@@ -120,12 +121,13 @@ public class TelaInicialProfessor extends AppCompatActivity {
     public void visualizarRotina(){
 
         final String oquefoi=TelaInicialProfessor.nomealunoselecionado+TelaInicialProfessor.dataselecionada;
-        DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
+        final DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
         referenciaAlunoAgenda.orderByChild("nomeDataAgenda").equalTo(oquefoi).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
                     DadosAgenda dados = alunosSnapShot.getValue(DadosAgenda.class);
+
                     passou = true;
 
 

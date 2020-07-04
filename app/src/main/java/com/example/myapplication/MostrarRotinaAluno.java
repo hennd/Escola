@@ -43,11 +43,6 @@ public class MostrarRotinaAluno extends AppCompatActivity implements AdapterView
     EditText atividadeEspecializadava;
     EditText observacoesva;
     EditText edtDataRotinava;
-    private DadosAgenda dadosAgendava;
-    private FirebaseAuth mAuthva;
-    private FirebaseDatabase databaseva;
-    private DatabaseReference myRefva;
-    private DatePickerDialog datapickerva;
 
     DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
 

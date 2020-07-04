@@ -69,9 +69,7 @@ public class UpdateAluno extends AppCompatActivity {
                     alunosSnapShot.getRef().child("nomePaiAluno").setValue(edtNomePaiAlunoAtualiza.getText().toString());
                     alunosSnapShot.getRef().child("telefoneAluno").setValue(edtTelefoneContatoAlunoAtualiza.getText().toString());
                     Toast.makeText(UpdateAluno.this, "Dados Atualizados", Toast.LENGTH_LONG).show();
-                     recreate();
-
-
+                    recreate();
 
 
                 }

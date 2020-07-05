@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.hardware.ConsumerIrManager;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ public class InserirCardapio extends AppCompatActivity {
     Cardapio cardapioinserir;
     DatabaseReference reference;
     Button btninserirCardapio;
+    Button btnSaircardapio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +33,15 @@ public class InserirCardapio extends AppCompatActivity {
         lanche2=(EditText)findViewById(R.id.edtcLanche2);
         jantar=(EditText)findViewById(R.id.edtcJantar);
         btninserirCardapio=(Button)findViewById(R.id.btnInserirCardapio);
+        btnSaircardapio=(Button)findViewById(R.id.btnVoltarCardapio);
         cardapioinserir = new Cardapio();
 
-
+        btnSaircardapio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sairCardapio();
+            }
+        });
         btninserirCardapio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +83,16 @@ public class InserirCardapio extends AppCompatActivity {
         cardapioinserir.setKeyCardapio(key);
         reference.child(key).setValue(cardapioinserir);
 
+        lanche1.setText("");
+        almoco.setText("");
+        lanche2.setText("");
+        jantar.setText("");
+
+    }
+    public void sairCardapio(){
+        Intent intent = new Intent(InserirCardapio.this, MenuDiretoria.class);
+        startActivity(intent);
+        finish();
 
     }
 }

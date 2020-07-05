@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MostrarRotina">
+    tools:context=".MostrarRotinaAluno">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MostrarRotina">
-
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MostrarRotinaAluno">
     <TextView
         android:id="@+id/txtRotinaDoAlunov"
         android:layout_width="177dp"
@@ -27,10 +27,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:textColor="@drawable/edit_text_selector"
         android:id="@+id/edtObservacoesv"
-
         android:layout_width="271dp"
+
         android:layout_height="205dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/redondo"
@@ -38,6 +37,7 @@
         android:gravity="left"
         android:inputType="textMultiLine"
         android:maxLines="5"
+        android:textColor="@drawable/edit_text_selector"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -194,6 +194,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtEvacuacaov"
         app:layout_constraintStart_toEndOf="@+id/txtEvacuacaov"
         app:layout_constraintTop_toTopOf="@+id/txtEvacuacaov" />
+
 
     <TextView
         android:id="@+id/txtEvacuacaov"
@@ -467,6 +468,20 @@
         app:layout_constraintBottom_toBottomOf="@+id/spinner_febre_tempv"
         app:layout_constraintEnd_toEndOf="@+id/rgFebrev"
         app:layout_constraintTop_toTopOf="@+id/spinner_febre_tempv" />
-</androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+    <Button
+        android:id="@+id/btnVoltarProf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtObservacoesv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>

@@ -63,6 +63,7 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
 
         listarTurmasAddProf();
         initializeUI();
+        edtTelefoneProfessora.addTextChangedListener(Mask.insert("(##)#####-####", edtTelefoneProfessora));
 
         btnCadastrarProfessor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,16 +115,16 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
             return;
         }
         if (TextUtils.isEmpty(cargoProfessora)) {
-            Toast.makeText(getApplicationContext(), "Selecione o cargo", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Selecione o Cargo!", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (TextUtils.isEmpty(emailProfessora)) {
-            Toast.makeText(getApplicationContext(), "Insira o email", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira o Email!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(senhaProfessora)) {
-            Toast.makeText(getApplicationContext(), "Insira a senha", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira a Senha!", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -145,12 +146,12 @@ public class CadastrarProfessor extends AppCompatActivity implements AdapterView
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Registrado com sucesso", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             CadastrarProfessorDatabase(professor);
                             CadastrarProfDiretoTurma(professor.getNomeProfessora());
-                            Intent intent = new Intent(CadastrarProfessor.this, Dash.class);
+                            Intent intent = new Intent(CadastrarProfessor.this, TelaProfessorDiretoria.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), "Falha ao Registrar", Toast.LENGTH_LONG).show();

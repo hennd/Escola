@@ -41,7 +41,7 @@ public class UpdateAluno extends AppCompatActivity {
         edtNomeMaeAlunoAtualiza.setText(TelaAlunoDiretoria.nomeMaeUserAlunoEditar);
         edtNomePaiAlunoAtualiza.setText(TelaAlunoDiretoria.nomePaiUserAlunoEditar);
         edtTelefoneContatoAlunoAtualiza.setText(TelaAlunoDiretoria.telefoneUserAlunoEditar);
-
+        edtTelefoneContatoAlunoAtualiza.addTextChangedListener(Mask.insert("(##)#####-####", edtTelefoneContatoAlunoAtualiza));
         btnAtualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,8 +69,6 @@ public class UpdateAluno extends AppCompatActivity {
                     alunosSnapShot.getRef().child("nomePaiAluno").setValue(edtNomePaiAlunoAtualiza.getText().toString());
                     alunosSnapShot.getRef().child("telefoneAluno").setValue(edtTelefoneContatoAlunoAtualiza.getText().toString());
                     Toast.makeText(UpdateAluno.this, "Dados Atualizados", Toast.LENGTH_LONG).show();
-                    recreate();
-
 
                 }
             }

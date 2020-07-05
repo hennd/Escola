@@ -51,17 +51,9 @@ public class ExcluirTurma extends AppCompatActivity {
         btnCriarTurma=(Button)findViewById(R.id.btnCriarTurma);
         spinnerExcluirTurma=(Spinner)findViewById(R.id.spinner_excluir_turmas);
         excluirTurma=(Button)findViewById(R.id.btnExcluirTurma);
-        irGerenciarTurmas=(Button)findViewById(R.id.btnIrParaGerenciarTurmas);
 
 
-        btnCriarTurma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                salvarTurma();
 
-
-            }
-        });
         excluirTurma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,26 +65,7 @@ public class ExcluirTurma extends AppCompatActivity {
 
     }
 
-    public void salvarTurma(){
 
-        turma = new Turma();
-
-        nomeTurma= edtNomeTurma.getText().toString();
-        reference = FirebaseDatabase.getInstance().getReference("Turmas");
-        String key = reference.child("Turmas").push().getKey();
-        listaAlunosNova.add(" 0");
-        listaProfessoresNova.add(" 0");
-        turma.setAlunosTurma(listaAlunosNova);
-        turma.setProfessores(listaProfessoresNova);
-        turma.setKeyUserTurma(key);
-        turma.setNomeTurma(nomeTurma);
-        reference.child(key).setValue(turma);
-        listaProfessoresNova.clear();
-        listaAlunosNova.clear();
-        Toast.makeText(this, "Turma criada com sucesso!", Toast.LENGTH_SHORT).show();
-        recreate();
-
-    }
     public void excluirTurma(){
 
         final String nome=spinnerExcluirTurma.getSelectedItem().toString();
@@ -143,8 +116,8 @@ public class ExcluirTurma extends AppCompatActivity {
         });
 
     }
-    public void irParaGerenciar(View view) {
-        Intent intent = new Intent(ExcluirTurma.this, GerenciarTurmas.class);
+    public void voltarExcluirTurmas(View view) {
+        Intent intent = new Intent(ExcluirTurma.this, MenuTurmas.class);
         startActivity(intent);
         finish();
     }

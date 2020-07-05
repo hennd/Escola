@@ -58,6 +58,7 @@ public class CadastrarAluno extends AppCompatActivity {
         listarTurmasAdd();
         initializeUI();
 
+        telefoneAluno.addTextChangedListener(Mask.insert("(##)#####-####", telefoneAluno));
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,28 +83,28 @@ public class CadastrarAluno extends AppCompatActivity {
 
 
         if (TextUtils.isEmpty(nomealuno)) {
-            Toast.makeText(getApplicationContext(), "Please enter name...", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira um Nome!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(nomemae)) {
 
-            Toast.makeText(getApplicationContext(), "Please enter maename!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira o Nome da Mãe!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(nomepai)) {
-            Toast.makeText(getApplicationContext(), "Please enter painame!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira o Nome do Pai!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(telefonealuno)) {
-            Toast.makeText(getApplicationContext(), "Please enter telname!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira um Telefone para contato!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please enter email!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira um Email!", Toast.LENGTH_LONG).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Insira uma Senha!", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -153,7 +154,7 @@ public class CadastrarAluno extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Usuário Cadastrado", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Cadastrado com Suecesso", Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             CadastrarAlunoDatabase(aluno);

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarTurma">
+
+    <EditText
+        android:id="@+id/edtNomeTurma"
+        android:layout_width="339dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/redondo"
+        android:ems="10"
+        android:hint="Nome da Turma"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNovaTurma" />
+
+    <Button
+        android:id="@+id/btnCriarTurma"
+        android:layout_width="257dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Criar Turma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeTurma" />
+
+    <Button
+        android:id="@+id/btnSairCriarTurma"
+        android:layout_width="339dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCriarTurma" />
+
+    <TextView
+        android:id="@+id/txtNovaTurma"
+
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="50dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Cadastrar Turma"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

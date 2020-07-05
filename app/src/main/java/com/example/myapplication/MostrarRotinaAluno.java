@@ -1,13 +1,16 @@
 package com.example.myapplication;
 
+import androidx.annotation.BinderThread;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -43,6 +46,7 @@ public class MostrarRotinaAluno extends AppCompatActivity implements AdapterView
     EditText atividadeEspecializadava;
     EditText observacoesva;
     EditText edtDataRotinava;
+    Button btnSairRotinaAluno;
 
     DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
 
@@ -51,7 +55,16 @@ public class MostrarRotinaAluno extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_rotina_aluno);
 
-
+        btnSairRotinaAluno=(Button)findViewById(R.id.btnSairRotinaAl);
+        btnSairRotinaAluno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TelaInicialAluno.pesquisaAgenda = " ";
+                Intent intent = new Intent(MostrarRotinaAluno.this, TelaInicialAluno.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         edtDataRotinava=(EditText)findViewById(R.id.edtDataRotinava);
         edtDataRotinava.setEnabled(false);
         edtLanche1va = (EditText)findViewById(R.id.edtLanche1va);
@@ -173,6 +186,8 @@ public class MostrarRotinaAluno extends AppCompatActivity implements AdapterView
                     observacoesva.setText(dados.getObservacoes());
 
                 }
+
+
             }
 
             @Override

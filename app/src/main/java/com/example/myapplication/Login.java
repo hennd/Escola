@@ -95,7 +95,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Login Efetuado Com Sucesso!", Toast.LENGTH_LONG).show();
 
 
 
@@ -194,7 +194,7 @@ public class Login extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+
 
         }
     }

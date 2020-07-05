@@ -15,7 +15,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/titulo_redondo"
         android:text="Login"
         android:textAlignment="center"
@@ -54,9 +54,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/titulo_redondo"
-        android:text="Login"
+        android:text="Entrar"
         app:layout_constraintTop_toBottomOf="@+id/password"
         tools:layout_editor_absoluteX="-148dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="399dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Não possui login? \n Entre em contato com a direção da escola"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

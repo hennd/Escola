@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".InserirCardapio">
 
+    <TextView
+        android:id="@+id/txtTituloCardapio"
+
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Cardapio"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnInserirCardapio"
+        android:background="@drawable/titulo_redondo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="162dp"
+        android:layout_marginTop="25dp"
         android:text="Atualizar Cardapio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,11 +33,10 @@
 
     <EditText
         android:id="@+id/edtcLanche1"
+        android:background="@drawable/redondo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="83dp"
+        android:layout_marginTop="160dp"
         android:ems="10"
         android:hint="Lanche 1"
         android:inputType="textPersonName"
@@ -33,10 +46,10 @@
 
     <EditText
         android:id="@+id/edtcAlmoco"
+        android:background="@drawable/redondo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginEnd="83dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Almoco"
         android:inputType="textPersonName"
@@ -45,11 +58,11 @@
         app:layout_constraintTop_toBottomOf="@+id/edtcLanche1" />
 
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/edtcLanche2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Lanche 2"
         android:inputType="textPersonName"
@@ -58,15 +71,27 @@
         app:layout_constraintTop_toBottomOf="@+id/edtcAlmoco" />
 
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/edtcJantar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="117dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Jantar"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtcLanche2" />
+
+    <Button
+        android:id="@+id/btnVoltarCardapio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnInserirCardapio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

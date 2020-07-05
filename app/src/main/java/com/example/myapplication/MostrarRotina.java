@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -52,6 +53,9 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
     private FirebaseDatabase databasev;
     private DatabaseReference myRefv;
     private DatePickerDialog datapickerv;
+    Button btnVoltarProfessor;
+
+
 
 
     DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
@@ -61,7 +65,18 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_rotina);
 
+        btnVoltarProfessor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TelaInicialProfessor.nomealunoselecionado="";
+                TelaInicialProfessor.dataselecionada="";
+                TelaInicialProfessor.idalunoSelecionadoRotina="";
 
+                Intent intent = new Intent(MostrarRotina.this, TelaInicialProfessor.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         edtDataRotinav=(EditText)findViewById(R.id.edtDataRotinav);
         edtDataRotinav.setEnabled(false);
@@ -93,6 +108,8 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
         atividadeDiaTardev=(EditText)findViewById(R.id.edtAtividadedoDiaTardev);
         atividadeEspecializadav=(EditText)findViewById(R.id.edtAtividadeEspecializadav);
         observacoesv=(EditText)findViewById(R.id.edtObservacoesv);
+
+
 
         final Spinner lanchev = findViewById(R.id.spinner_lanche1v);
         ArrayAdapter<CharSequence> lancheAdapterv = ArrayAdapter.createFromResource(this,R.array.comeu,android.R.layout.simple_spinner_item);
@@ -184,6 +201,7 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
                     observacoesv.setText(dados.getObservacoes());
 
                 }
+
             }
 
             @Override

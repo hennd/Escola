@@ -28,13 +28,13 @@ public class MenuDiretoria extends AppCompatActivity {
         finish();
     }
     public void abrirTelaTurmas(View view) {
-        Intent intent = new Intent(MenuDiretoria.this, ExcluirTurma.class);
+        Intent intent = new Intent(MenuDiretoria.this, MenuTurmas.class);
         startActivity(intent);
         finish();
     }
     public void abrirTelaCardapio(View view){
 
-        Intent intent = new Intent(MenuDiretoria.this, Agenda.class);
+        Intent intent = new Intent(MenuDiretoria.this, InserirCardapio.class);
         startActivity(intent);
         finish();
 

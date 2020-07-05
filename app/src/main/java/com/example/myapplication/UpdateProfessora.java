@@ -50,7 +50,7 @@ public class UpdateProfessora extends AppCompatActivity implements AdapterView.O
         edtTelefoneProfessoraAtualiza.setText(TelaProfessorDiretoria.telefoneProfessoraEditar);
         spinner_cargo_professora_atualiza.setSelection(TelaProfessorDiretoria.spinnerCargoProfessoraPosition);
 
-
+        edtTelefoneProfessoraAtualiza.addTextChangedListener(Mask.insert("(##)#####-####", edtTelefoneProfessoraAtualiza));
 
         btnAtualizarProfessora.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarProfessor">
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,84 +19,134 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:background="@drawable/titulo_redondo"
         android:text="Dados do Professora"
         android:textAlignment="center"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:background="@drawable/redondo"
-
         android:id="@+id/edtNomeProfessora"
+
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/redondo"
         android:ems="10"
         android:hint="Nome Professora"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDadosProfessor" />
 
     <EditText
-        android:background="@drawable/redondo"
-
         android:id="@+id/edtTelefoneProfessora"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/redondo"
         android:ems="10"
         android:hint="Telefone Professora"
-        android:inputType="textPersonName" />
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeProfessora" />
 
     <Spinner
         android:id="@+id/spinner_cargo_professora"
         android:layout_width="match_parent"
-        android:layout_height="45dp" />
-
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <EditText
-        android:background="@drawable/redondo"
-
         android:id="@+id/edtEmailProfessora"
+
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/redondo"
         android:ems="10"
         android:hint="Email Professora"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_cargo_professora" />
 
     <EditText
-        android:background="@drawable/redondo"
-
         android:id="@+id/edtSenhaProfessora"
+
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/redondo"
         android:ems="10"
         android:hint="Senha Professora"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailProfessora" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Adicionar na Turma"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenhaProfessora" />
 
     <Spinner
         android:id="@+id/spinner_todas_turmas_addprof"
         android:layout_width="match_parent"
-        android:layout_height="45dp" />
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:background="@drawable/titulo_redondo"
-
         android:id="@+id/btnCadastrarProfessora"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar" />
+        android:layout_marginTop="80dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Cadastrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_todas_turmas_addprof" />
 
     <Button
-        android:background="@drawable/titulo_redondo"
-
         android:id="@+id/btnBack"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/titulo_redondo"
         android:onClick="voltarTelaAlunos"
-        android:text="Voltar" />
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarProfessora" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="Cargo:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTelefoneProfessora" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

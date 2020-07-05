@@ -80,7 +80,7 @@ public class ExcluirTurma extends AppCompatActivity {
                     databaseReference.child(turma.getKeyUserTurma()).removeValue();
 
 
-                    recreate();
+               //     recreate();
 
                 }
             }

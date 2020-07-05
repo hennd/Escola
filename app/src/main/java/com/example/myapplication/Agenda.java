@@ -169,7 +169,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         edtJantar.setEnabled(false);
         edtLanche1.setEnabled(false);
         edtAlmoco.setEnabled(false);
-
+        textoData.setText(TelaInicialProfessor.dataselecionada);
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -334,7 +334,9 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
         dadosAgenda.setKeyAgenda(key);
         myRef.child(key).setValue(dadosAgenda);
 
+        Toast.makeText(getApplicationContext(), "Rotina Salva", Toast.LENGTH_LONG).show();
 
+        recreate();
 
     }
 

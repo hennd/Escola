@@ -292,7 +292,7 @@ public class GerenciarTurmasAlunos extends AppCompatActivity {
                     }
                 });
                 excluirAlunosDaTurmaAntiga(turmadoAlunoantiga, alunoexcluirturmaantiga);
-                recreate();
+                // recreate();
             }
 
             @Override

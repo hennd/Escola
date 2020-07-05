@@ -98,6 +98,7 @@ public class TelaInicialProfessor extends AppCompatActivity {
                         edtdataselecionada.requestFocus();
                     }
                 },day,month,year);
+                datapicker.updateDate(2020,1-1,1);
                 datapicker.show();
             }
         });

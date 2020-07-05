@@ -219,6 +219,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
                         textoData.setText(mDay + "/" +(mMonth+1) + "/" + mYear);
                     }
                 },day,month,year);
+                datapicker.updateDate(2020,1-1,1);
                 datapicker.show();
             }
         });
@@ -338,7 +339,7 @@ public class Agenda extends AppCompatActivity implements TimePickerDialog.OnTime
     }
 
     public void voltarTelaDiretoria() {
-        Intent intent = new Intent(Agenda.this, MenuDiretoria.class);
+        Intent intent = new Intent(Agenda.this, TelaInicialProfessor.class);
         startActivity(intent);
         finish();
     }

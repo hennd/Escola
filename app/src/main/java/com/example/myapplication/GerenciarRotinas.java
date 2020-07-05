@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -53,6 +54,7 @@ public class GerenciarRotinas extends AppCompatActivity implements TimePickerDia
     Button btnFebreHoraedita;
     Button btnSalvarEditar;
     String febre;
+    Button btnbackeditado;
     DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,16 @@ public class GerenciarRotinas extends AppCompatActivity implements TimePickerDia
         final int hour = c.get(Calendar.HOUR_OF_DAY);
         final int minute = c.get(Calendar.MINUTE);
         btnSalvarEditar=(Button)findViewById(R.id.btnSalvareditado);
+        btnbackeditado=(Button)findViewById(R.id.btnBackeditado);
+        btnbackeditado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TelaInicialAluno.pesquisaAgenda = " ";
+                Intent intent = new Intent(GerenciarRotinas.this, TelaDiretoriaGerenciarRotinas.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         btnFebreHoraedita=(Button)findViewById(R.id.btnHoraFebre2);
         edtDataRotinavag=(EditText)findViewById(R.id.edtDataRotinavag);
         edtDataRotinavag.setEnabled(false);

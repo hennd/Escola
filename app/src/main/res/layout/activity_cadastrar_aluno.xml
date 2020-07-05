@@ -88,7 +88,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/redondo"
         android:hint="Senha"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/email"
         tools:layout_editor_absoluteX="16dp" />
 

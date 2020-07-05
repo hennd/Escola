@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -34,6 +35,7 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
     SpinnerAdapter adapterTodosAlunos;
     Spinner spinnerTodosAlunos;
     EditText edtdataselecionadagerenciar;
+    Button btnsairGerenciarRotinas;
 
     List<String> todosalunos = new ArrayList<>();
     static public String alunoselecionado;
@@ -63,7 +65,16 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
         edtdataselecionadagerenciar=(EditText)findViewById(R.id.edtDataGerenciar);
         edtdataselecionadagerenciar.setEnabled(false);
         btnexcluirrotina=(Button)findViewById(R.id.btnExcluirRotina);
-
+        btnsairgerenciarrotina=(Button)findViewById(R.id.btnSairGerenciarRotinas);
+        btnsairgerenciarrotina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TelaInicialAluno.pesquisaAgenda = " ";
+                Intent intent = new Intent(TelaDiretoriaGerenciarRotinas.this, MenuDiretoria.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         listarTodosAlunos();
         btnexcluirrotina.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,15 +95,20 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
         dprotinagerenciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 datapicker=new DatePickerDialog(TelaDiretoriaGerenciarRotinas.this, new DatePickerDialog.OnDateSetListener() {
+
                     @Override
                     public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
+
                         edtdataselecionadagerenciar.setText(mDay + "/" +(mMonth+1) + "/" + mYear);
                         dataselecionadagerenciar=mDay + "/" +(mMonth+1) + "/" + mYear;
                         edtdataselecionadagerenciar.requestFocus();
                     }
                 },day,month,year);
+                datapicker.updateDate(2020,1-1,1);
                 datapicker.show();
+
             }
         });
     }

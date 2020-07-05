@@ -18,7 +18,7 @@
 
         android:layout_width="339dp"
         android:layout_height="55dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/titulo_redondo"
         android:text="Excluir Turma"
         android:textAlignment="center"

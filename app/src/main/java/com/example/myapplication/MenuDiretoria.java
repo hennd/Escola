@@ -32,6 +32,13 @@ public class MenuDiretoria extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void abrirRotinas(View view) {
+
+        Intent intent = new Intent(MenuDiretoria.this, TelaDiretoriaGerenciarRotinas.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void abrirTelaCardapio(View view){
 
         Intent intent = new Intent(MenuDiretoria.this, InserirCardapio.class);

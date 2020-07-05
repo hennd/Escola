@@ -10,17 +10,20 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Professor"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/titulo_redondo"
+        android:text="Rotinas"
+        android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
         android:id="@+id/btnSairProfessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:text="Sair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -28,10 +31,11 @@
         app:layout_constraintTop_toBottomOf="@+id/btnVisualizarRotina" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
         android:id="@+id/btnAdicionarRotina"
         android:layout_width="151dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Adicionar Rotina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,10 +43,10 @@
 
     <Spinner
         android:id="@+id/spinner_alunos_prof_logado"
-        android:layout_width="409dp"
+        android:layout_width="339dp"
         android:layout_height="45dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +56,7 @@
         android:id="@+id/txtSelecioneAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:text="Selecione o Aluno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,18 +66,19 @@
         android:id="@+id/txtSelecioneData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="15dp"
         android:text="Selecione a Data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_alunos_prof_logado" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
         android:id="@+id/btnVisualizarRotina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="15dp"
         android:text="Visualizar Rotina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -82,20 +87,21 @@
 
     <Button
         android:id="@+id/dpRotina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="71dp"
         android:layout_marginStart="15dp"
-        android:text="Button"
+        android:background="@drawable/ic_iconfinder_organizer_1118206"
         app:layout_constraintBottom_toBottomOf="@+id/edtData"
         app:layout_constraintStart_toEndOf="@+id/edtData"
         app:layout_constraintTop_toTopOf="@+id/edtData" />
 
     <EditText
+        android:background="@drawable/redondo"
         android:id="@+id/edtData"
         android:layout_width="101dp"
         android:layout_height="45dp"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"

@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/titulo_redondo"
-        android:text="Editar Professor Selecionado"
+        android:text="Editar Professora Selecionada"
         app:layout_constraintTop_toBottomOf="@+id/spinnerProfessoras"
         tools:layout_editor_absoluteX="-1dp" />
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/titulo_redondo"
-        android:text="Excluir Professor Selecionado"
+        android:text="Excluir Professora Selecionada"
         app:layout_constraintTop_toBottomOf="@+id/btnEditarProfessora"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -54,7 +54,7 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/titulo_redondo"
         android:onClick="abrirTelaProfessoras"
-        android:text="Cadastrar Novo Professor"
+        android:text="Cadastrar Nova Professora"
         app:layout_constraintTop_toBottomOf="@+id/btnExcluirProfessora"
         tools:layout_editor_absoluteX="-16dp" />
 
@@ -85,7 +85,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/titulo_redondo"
         android:text="PROFESSORAS"
         android:textSize="40dp"

@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Calendar;
 
 public class TelaInicialAluno extends AppCompatActivity  {
+
+    String alunoselec;
     public static String pesquisaAgenda;
     Boolean passou=false;
     Button btnsairaluno;
@@ -58,7 +60,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
                 for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
                     Aluno aluno = alunosSnapShot.getValue(Aluno.class);
 
-                    TelaInicialProfessor.nomealunoselecionado=aluno.getNomeAluno();
+                    alunoselec=aluno.getNomeAluno();
 
 
 
@@ -82,6 +84,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
                         edtDataRotinaAluno.setText(mDay + "/" +(mMonth+1) + "/" + mYear);
                     }
                 },day,month,year);
+                datapicker.updateDate(2020,1-1,1);
                 datapicker.show();
             }
         });
@@ -113,7 +116,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
 
     public void visualizarRotinaAluno(){
 
-        pesquisaAgenda= TelaInicialProfessor.nomealunoselecionado+edtDataRotinaAluno.getText().toString();
+        pesquisaAgenda= alunoselec+edtDataRotinaAluno.getText().toString();
 
 
         DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
@@ -138,7 +141,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
         });
 
         if(passou==false) {
-            txttitulo.setText(pesquisaAgenda);
+
             Toast.makeText(this, "Não há rotinas na data Selecionada", Toast.LENGTH_LONG).show();
 
         }else {

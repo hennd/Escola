@@ -65,12 +65,14 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_rotina);
 
+        btnVoltarProfessor=(Button)findViewById(R.id.btnVoltarProf);
         btnVoltarProfessor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TelaInicialProfessor.nomealunoselecionado="";
-                TelaInicialProfessor.dataselecionada="";
-                TelaInicialProfessor.idalunoSelecionadoRotina="";
+
+           TelaInicialProfessor.nomealunoselecionado="";
+           TelaInicialProfessor.dataselecionada="";
+           TelaInicialProfessor.idalunoSelecionadoRotina="";
 
                 Intent intent = new Intent(MostrarRotina.this, TelaInicialProfessor.class);
                 startActivity(intent);
@@ -90,24 +92,39 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
         edtJantarv.setEnabled(false);
 
         spinnerLanche1v=(Spinner)findViewById(R.id.spinner_lanche1v);
+        spinnerLanche1v.setEnabled(false);
         spinnerAlmocov=(Spinner)findViewById(R.id.spinner_almocov);
+        spinnerAlmocov.setEnabled(false);
         spinnerLanche2v=(Spinner)findViewById(R.id.spinner_lanche2v);
+        spinnerLanche2v.setEnabled(false);
         spinnerJantarv=(Spinner)findViewById(R.id.spinner_jantarv);
-
+        spinnerJantarv.setEnabled(false);
         spinnerSonov=(Spinner)findViewById(R.id.spinner_sono_turnosv);
+        spinnerSonov.setEnabled(false);
         spinnerSonoTempov=(Spinner)findViewById(R.id.spinner_tempo_sonov);
-
+        spinnerSonoTempov.setEnabled(false);
         spinnerEvacuacaov=(Spinner)findViewById(R.id.spinner_evacuacaov);
+        spinnerEvacuacaov.setEnabled(false);
         edtHoraFebrev=(EditText)findViewById(R.id.edtHoraFebrev);
+        edtHoraFebrev.setEnabled(false);
         rgFebrev=(RadioGroup)findViewById(R.id.rgFebrev);
+        rgFebrev.setEnabled(false);
         rbFebreSimv=(RadioButton)findViewById(R.id.rbFebreSimv);
+        rbFebreSimv.setEnabled(false);
         rbFebreNaov=(RadioButton)findViewById(R.id.rbFebreNaov);
+        rbFebreNaov.setEnabled(false);
         spinnerFebreTemperaturav=(Spinner)findViewById(R.id.spinner_febre_tempv);
+        spinnerFebreTemperaturav.setEnabled(false);
         medicacaoFebrev=(EditText)findViewById(R.id.edtMedicacaov);
+        medicacaoFebrev.setEnabled(false);
         atividadeDiaManhav=(EditText)findViewById(R.id.edtAtividadedoDiaManhav);
+        atividadeDiaManhav.setEnabled(false);
         atividadeDiaTardev=(EditText)findViewById(R.id.edtAtividadedoDiaTardev);
+        atividadeDiaTardev.setEnabled(false);
         atividadeEspecializadav=(EditText)findViewById(R.id.edtAtividadeEspecializadav);
+        atividadeEspecializadav.setEnabled(false);
         observacoesv=(EditText)findViewById(R.id.edtObservacoesv);
+        observacoesv.setEnabled(false);
 
 
 
@@ -170,7 +187,6 @@ public class MostrarRotina extends AppCompatActivity implements AdapterView.OnIt
         febreTempv.setEnabled(false);
 
         final String oquefoi=TelaInicialProfessor.nomealunoselecionado+TelaInicialProfessor.dataselecionada;
-        observacoesv.setText(oquefoi);
 
         referenciaAlunoAgenda.orderByChild("nomeDataAgenda").equalTo(oquefoi).addValueEventListener(new ValueEventListener() {
             @Override

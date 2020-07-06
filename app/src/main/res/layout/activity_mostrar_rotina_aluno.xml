@@ -7,11 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".MostrarRotinaAluno">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     tools:context=".MostrarRotinaAluno">
 
@@ -160,7 +158,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txtFebreva" />
 
         <EditText
-            android:textColor="@drawable/edit_text_selector"
             android:id="@+id/edtMedicacaova"
             android:layout_width="195dp"
             android:layout_height="40dp"
@@ -168,8 +165,9 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/redondo"
             android:ems="10"
-            android:hint="Medicação"
+            android:hint="-"
             android:inputType="textPersonName"
+            android:textColor="@drawable/edit_text_selector"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/txtFebreva"
             app:layout_constraintStart_toEndOf="@+id/txtFebreva"
@@ -303,10 +301,10 @@
             app:layout_constraintTop_toTopOf="@+id/edtAlmocov" />
 
         <Spinner
-            android:textColor="@drawable/edit_text_selector"
             android:id="@+id/spinner_lanche1va"
             android:layout_width="95dp"
             android:layout_height="40dp"
+            android:textColor="@color/disabled_color"
             app:layout_constraintBottom_toBottomOf="@+id/edtLanche1va"
             app:layout_constraintEnd_toEndOf="@+id/spinner_evacuacaova"
             app:layout_constraintTop_toTopOf="@+id/edtLanche1va" />
@@ -473,17 +471,17 @@
             app:layout_constraintEnd_toEndOf="@+id/rgFebreva"
             app:layout_constraintTop_toTopOf="@+id/spinner_febre_tempva" />
 
-    <Button
-        android:id="@+id/btnSairRotinaAl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/titulo_redondo"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtObservacoesva" />
+        <Button
+            android:id="@+id/btnSairRotinaAl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/titulo_redondo"
+            android:text="Voltar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtObservacoesva" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

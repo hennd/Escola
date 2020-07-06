@@ -87,7 +87,7 @@ public class CadastrarADM extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Cadastrado com Sucesso!", Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             CadastrarAdministradorDatabase(administrador);

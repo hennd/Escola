@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import android.os.Bundle;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -268,6 +269,10 @@ public class GerenciarRotinas extends AppCompatActivity implements TimePickerDia
                     alunosSnapShot.getRef().child("spinnerrefeicaoJantar").setValue(spinnerJantarvag.getSelectedItemPosition());
                     alunosSnapShot.getRef().child("temperatura").setValue(spinnerFebreTemperaturavag.getSelectedItem().toString());
                     alunosSnapShot.getRef().child("tempoSono").setValue(spinnerSonoTempovag.getSelectedItem().toString());
+                    Toast.makeText(GerenciarRotinas.this, "Dados Alterados com Sucesso!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(GerenciarRotinas.this, TelaDiretoriaGerenciarRotinas.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
 
@@ -276,5 +281,7 @@ public class GerenciarRotinas extends AppCompatActivity implements TimePickerDia
 
             }
         });
+
     }
+
 }

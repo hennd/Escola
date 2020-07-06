@@ -79,8 +79,10 @@ public class ExcluirTurma extends AppCompatActivity {
 
                     databaseReference.child(turma.getKeyUserTurma()).removeValue();
 
+                    Toast.makeText(getApplicationContext(), "Turma Excluida com Sucesso!", Toast.LENGTH_LONG).show();
 
-               //     recreate();
+
+                    recreate();
 
                 }
             }

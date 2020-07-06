@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarADM">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +14,7 @@
     tools:context=".CadastrarADM">
 
     <TextView
+        android:background="@drawable/titulo_redondo"
         android:id="@+id/txtDadosAdm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,6 +25,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
+
         android:id="@+id/btnCadastrarAdministrador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,6 +35,8 @@
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaAdm" />
 
     <Button
+        android:background="@drawable/titulo_redondo"
+
         android:id="@+id/btnVoltarTelaAdministrador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,15 +46,19 @@
 
     <EditText
         android:id="@+id/edtNomeAdm"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="80dp"
+        android:background="@drawable/redondo"
         android:ems="10"
         android:hint="Nome Administrador"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/txtDadosAdm" />
 
     <EditText
+        android:background="@drawable/redondo"
+
         android:id="@+id/edtEmailAdm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,12 +70,15 @@
 
     <EditText
         android:id="@+id/edtSenhaAdm"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/redondo"
         android:ems="10"
-        android:hint="SenhaAdministrador"
+        android:hint="Senha Administrador"
         android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@+id/edtEmailAdm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

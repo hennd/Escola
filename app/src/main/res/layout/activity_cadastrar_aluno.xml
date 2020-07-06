@@ -31,14 +31,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:background="@drawable/redondo"
         android:id="@+id/nomeAluno"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/redondo"
         android:hint="Nome Aluno"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="6dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/nomeMaeAluno"

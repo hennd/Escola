@@ -23,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static com.example.myapplication.R.color.disabled_color;
+
 public class MostrarRotinaAluno extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText edtLanche1va;
     EditText edtAlmocova;
@@ -77,24 +79,41 @@ public class MostrarRotinaAluno extends AppCompatActivity implements AdapterView
         edtJantarva.setEnabled(false);
 
         spinnerLanche1va=(Spinner)findViewById(R.id.spinner_lanche1va);
+        spinnerLanche1va.setEnabled(false);
         spinnerAlmocova=(Spinner)findViewById(R.id.spinner_almocova);
+        spinnerAlmocova.setEnabled(false);
         spinnerLanche2va=(Spinner)findViewById(R.id.spinner_lanche2va);
+        spinnerLanche2va.setEnabled(false);
         spinnerJantarva=(Spinner)findViewById(R.id.spinner_jantarva);
+        spinnerJantarva.setEnabled(false);
 
         spinnerSonova=(Spinner)findViewById(R.id.spinner_sono_turnosva);
+        spinnerSonova.setEnabled(false);
         spinnerSonoTempova=(Spinner)findViewById(R.id.spinner_tempo_sonova);
+        spinnerSonoTempova.setEnabled(false);
 
         spinnerEvacuacaova=(Spinner)findViewById(R.id.spinner_evacuacaova);
+        spinnerEvacuacaova.setEnabled(false);
         edtHoraFebreva=(EditText)findViewById(R.id.edtHoraFebreva);
+
+        edtHoraFebreva.setEnabled(false);
         rgFebreva=(RadioGroup)findViewById(R.id.rgFebreva);
+        rgFebreva.setEnabled(false);
         rbFebreSimva=(RadioButton)findViewById(R.id.rbFebreSimva);
+        rbFebreSimva.setEnabled(false);
         rbFebreNaova=(RadioButton)findViewById(R.id.rbFebreNaova);
+        rbFebreNaova.setEnabled(false);
         spinnerFebreTemperaturava=(Spinner)findViewById(R.id.spinner_febre_tempva);
         medicacaoFebreva=(EditText)findViewById(R.id.edtMedicacaova);
+        medicacaoFebreva.setEnabled(false);
         atividadeDiaManhava=(EditText)findViewById(R.id.edtAtividadedoDiaManhava);
+        atividadeDiaManhava.setEnabled(false);
         atividadeDiaTardeva=(EditText)findViewById(R.id.edtAtividadedoDiaTardeva);
+        atividadeDiaTardeva.setEnabled(false);
         atividadeEspecializadava=(EditText)findViewById(R.id.edtAtividadeEspecializadava);
+        atividadeEspecializadava.setEnabled(false);
         observacoesva=(EditText)findViewById(R.id.edtObservacoesva);
+        observacoesva.setEnabled(false);
 
         final Spinner lancheva = findViewById(R.id.spinner_lanche1va);
         ArrayAdapter<CharSequence> lancheAdapterva = ArrayAdapter.createFromResource(this,R.array.comeu,android.R.layout.simple_spinner_item);

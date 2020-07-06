@@ -140,7 +140,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
 
         });
 
-        if(passou==false) {
+        if(passou!=true) {
 
             Toast.makeText(this, "Não há rotinas na data Selecionada", Toast.LENGTH_LONG).show();
 

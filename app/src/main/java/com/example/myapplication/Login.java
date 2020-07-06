@@ -148,13 +148,13 @@ public class Login extends AppCompatActivity {
 
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError databaseError) {
-                                    Toast.makeText(getApplicationContext(), "Nao rolou o search", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "<ERRO> Não aconteceu a busca", Toast.LENGTH_LONG).show();
                                 }
                             });
 
 
                         } else {
-                            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Falha no login, dados inválidos!", Toast.LENGTH_LONG).show();
 
                         }
                     }

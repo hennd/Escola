@@ -88,6 +88,8 @@ public class InserirCardapio extends AppCompatActivity {
         lanche2.setText("");
         jantar.setText("");
 
+        Toast.makeText(getApplicationContext(), "Cardapio Salvo com Sucesso!", Toast.LENGTH_LONG).show();            return;
+
     }
     public void sairCardapio(){
         Intent intent = new Intent(InserirCardapio.this, MenuDiretoria.class);

@@ -123,7 +123,7 @@ public class TelaInicialProfessor extends AppCompatActivity {
 
         final String oquefoi=TelaInicialProfessor.nomealunoselecionado+TelaInicialProfessor.dataselecionada;
         final DatabaseReference referenciaAlunoAgenda= FirebaseDatabase.getInstance().getReference("agendas");
-        referenciaAlunoAgenda.orderByChild("nomeDataAgenda").equalTo(oquefoi).addValueEventListener(new ValueEventListener() {
+        referenciaAlunoAgenda.orderByChild("nomeDataAgenda").equalTo(oquefoi).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot alunosSnapShot : dataSnapshot.getChildren()) {
@@ -200,7 +200,7 @@ public class TelaInicialProfessor extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        Toast.makeText(this, "Saindo", Toast.LENGTH_LONG).show();
+
     }
 
     public void listaAlunosTurmaProfessorLogado() {

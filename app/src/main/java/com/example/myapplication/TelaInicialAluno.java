@@ -20,7 +20,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class TelaInicialAluno extends AppCompatActivity  {
 
@@ -39,7 +41,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
     final int month = c.get(Calendar.MONTH);
     final int year = c.get(Calendar.YEAR);
     private DatePickerDialog datapicker;
-
+    private Date DataAtual = new Date();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +53,16 @@ public class TelaInicialAluno extends AppCompatActivity  {
         edtDataRotinaAluno.setEnabled(false);
         visualizarRotina=(Button)findViewById(R.id.btnVisualizarRotinaAluno);
         txttitulo=(TextView)findViewById(R.id.txtTituloAluno);
+        DataAtual.getTime();
+        SimpleDateFormat sddia= new SimpleDateFormat("dd");
+        SimpleDateFormat smes= new SimpleDateFormat("MM");
+        SimpleDateFormat sano= new SimpleDateFormat("yyyy");
+        String diaagora = sddia.format(DataAtual);
+        final String anoagora = sano.format(DataAtual);
+        String mesagora = smes.format(DataAtual);
+        final Integer diaagoraint = Integer.parseInt(diaagora);
+        final Integer anoagoraint = Integer.parseInt(anoagora);
+        final Integer mesagoraint = Integer.parseInt(mesagora);
 
         String emaillogado = mAuth.getCurrentUser().getEmail();
         reference = FirebaseDatabase.getInstance().getReference();
@@ -84,7 +96,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
                         edtDataRotinaAluno.setText(mDay + "/" +(mMonth+1) + "/" + mYear);
                     }
                 },day,month,year);
-                datapicker.updateDate(2020,1-1,1);
+                datapicker.updateDate(anoagoraint,mesagoraint-1,diaagoraint);
                 datapicker.show();
             }
         });
@@ -96,13 +108,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
                 sairAluno();
             }
         });
-        visualizarRotina.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                visualizarRotinaAluno();
-            }
-        });
     }
     public void sairAluno(){
 
@@ -114,7 +120,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
         Toast.makeText(this, "Saindo", Toast.LENGTH_LONG).show();
     }
 
-    public void visualizarRotinaAluno(){
+    public void visualizarRotinaAluno(View View){
 
         pesquisaAgenda= alunoselec+edtDataRotinaAluno.getText().toString();
 
@@ -127,9 +133,19 @@ public class TelaInicialAluno extends AppCompatActivity  {
                     DadosAgenda dados = alunosSnapShot.getValue(DadosAgenda.class);
                     passou = true;
 
+                }
+                if(passou==true) {
+
+                    Intent intent = new Intent(TelaInicialAluno.this, MostrarRotinaAluno.class);
+                    startActivity(intent);
+                    finish();
+
+
+                }else {
+                    Toast.makeText(TelaInicialAluno.this, "Não há rotinas na data Selecionada", Toast.LENGTH_LONG).show();
+
 
                 }
-
             }
 
 
@@ -140,15 +156,7 @@ public class TelaInicialAluno extends AppCompatActivity  {
 
         });
 
-        if(passou!=true) {
 
-            Toast.makeText(this, "Não há rotinas na data Selecionada", Toast.LENGTH_LONG).show();
-
-        }else {
-            Intent intent = new Intent(TelaInicialAluno.this, MostrarRotinaAluno.class);
-            startActivity(intent);
-            finish();
-        }
 
     }
 }

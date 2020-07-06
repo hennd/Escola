@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -23,8 +24,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
@@ -47,6 +50,7 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
     final int month = c.get(Calendar.MONTH);
     final int year = c.get(Calendar.YEAR);
     private DatePickerDialog datapicker;
+    private Date DataAtual = new Date();
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private Button btneditarrotina;
@@ -76,6 +80,16 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
             }
         });
         listarTodosAlunos();
+        DataAtual.getTime();
+        SimpleDateFormat sddia= new SimpleDateFormat("dd");
+        SimpleDateFormat smes= new SimpleDateFormat("MM");
+        SimpleDateFormat sano= new SimpleDateFormat("yyyy");
+        String diaagora = sddia.format(DataAtual);
+        final String anoagora = sano.format(DataAtual);
+        String mesagora = smes.format(DataAtual);
+        final Integer diaagoraint = Integer.parseInt(diaagora);
+        final Integer anoagoraint = Integer.parseInt(anoagora);
+        final Integer mesagoraint = Integer.parseInt(mesagora);
         btnexcluirrotina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +120,7 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
                         edtdataselecionadagerenciar.requestFocus();
                     }
                 },day,month,year);
-                datapicker.updateDate(2020,1-1,1);
+                datapicker.updateDate(anoagoraint,mesagoraint-1,diaagoraint);
                 datapicker.show();
 
             }
@@ -153,6 +167,14 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
 
                     passou=true;
                 }
+                if(passou==false) {
+                    Toast.makeText(TelaDiretoriaGerenciarRotinas.this, "Não há rotinas com estas informações selecionadas", Toast.LENGTH_LONG).show();
+
+                }else {
+                    Intent intent = new Intent(TelaDiretoriaGerenciarRotinas.this, GerenciarRotinas.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
 
             @Override
@@ -160,14 +182,7 @@ public class TelaDiretoriaGerenciarRotinas extends AppCompatActivity {
 
             }
         });
-        if(passou==false) {
-            Toast.makeText(this, "Não há rotinas com estas informações selecionadas", Toast.LENGTH_LONG).show();
 
-        }else {
-            Intent intent = new Intent(TelaDiretoriaGerenciarRotinas.this, GerenciarRotinas.class);
-            startActivity(intent);
-            finish();
-        }
     }
     public void excluirRotina(){
 
